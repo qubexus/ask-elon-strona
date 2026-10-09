@@ -40,7 +40,9 @@ h1 em{font-style:normal;color:var(--orange)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:1.02rem;padding:15px 24px;border-radius:14px;text-decoration:none;transition:transform .15s,box-shadow .15s}
 .btn-primary{background:var(--orange);color:#1a0d00;box-shadow:0 10px 30px rgba(255,122,24,.35)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,122,24,.45)}
-.btn-soon{background:rgba(255,255,255,.06);color:#C5D2DC;border:1.5px dashed rgba(255,255,255,.28);cursor:not-allowed}
+.btn-soon{background:rgba(255,255,255,.06);color:#C5D2DC;border:1.5px dashed rgba(255,255,255,.28);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.btn-soon:hover,.btn-soon:focus-visible{background:rgba(255,255,255,.12);border-color:var(--orange);color:#fff}
+.btn-soon .sep{opacity:.7}
 .badge-soon{background:#FFD8B8;color:#7A3500;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:6px}
 .langs{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px;font-size:.88rem;color:var(--muted)}
 .langs>span{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid var(--line);padding:4px 11px;border-radius:8px;color:#DCE6ED}
@@ -221,9 +223,9 @@ footer a:hover{color:var(--orange)}
    <p class="lead" data-i18n="hero.lead">Ask Elon pomaga Polakom i Rumunom pracującym w Wielkiej Brytanii: sprawdzi payslip i SSP, przygotuje Cię do rozmowy dyscyplinarnej i napisze pismo do HR – w Twoim języku, o każdej porze.</p>
    <div class="btns">
     <a class="btn btn-primary" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04" data-i18n="btn.buy">Wykup dostęp – £9.99/mies.</a>
-    <!-- LINK DO SKLEPU: gdy aplikacja będzie w App Store / Google Play, zamień poniższy <span> na
+    <!-- LINK DO SKLEPU: gdy aplikacja będzie w App Store / Google Play, zmień href poniższego linku (teraz prowadzi do Stripe) na link do sklepu, np.
          <a class="btn btn-primary" href="TUTAJ_WKLEJ_LINK_DO_SKLEPU">Pobierz aplikację</a> -->
-    <span class="btn btn-soon" aria-disabled="true" title="Aplikacja wkrótce w sklepach" data-i18n-attr="title:soon.title"><span data-i18n="soon.btn">Pobierz aplikację</span> <span class="badge-soon" data-i18n="soon.badge">wkrótce</span></span>
+    <a class="btn btn-soon" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04" title="Aplikacja wkrótce w sklepach – kliknij, aby już teraz wykupić dostęp" data-i18n-attr="title:soon.title"><span data-i18n="soon.btn">Pobierz aplikację</span><span class="sep"> – </span><span class="badge-soon" data-i18n="soon.badge">wkrótce</span></a>
    </div>
    <div class="langs"><span data-i18n="hero.talk" style="background:none;border:0;padding:4px 0;color:inherit">Rozmawiaj po:</span><span><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-pl"/></svg><b data-i18n="hero.l.pl" style="font-weight:inherit">polsku</b></span><span><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-ro"/></svg><b data-i18n="hero.l.ro" style="font-weight:inherit">rumuńsku</b></span><span><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-gb"/></svg><b data-i18n="hero.l.en" style="font-weight:inherit">angielsku</b></span></div>
   </div>
@@ -378,7 +380,7 @@ footer a:hover{color:var(--orange)}
   'hero.pill':'Disponibil 24/7 · Union Mate UK',
   'hero.h1':'Delegatul tău sindical AI în&nbsp;UK. <em>Mereu la îndemână.</em>',
   'hero.lead':'Ask Elon îi ajută pe polonezii și românii care lucrează în Marea Britanie: îți verifică fluturașul de salariu și SSP-ul, te pregătește pentru ședința disciplinară și îți scrie scrisoarea către HR – în limba ta, la orice oră.',
-  'btn.buy':'Abonează-te – £9.99/lună','soon.title':'Aplicația va apărea în curând în magazine','soon.btn':'Descarcă aplicația','soon.badge':'în curând',
+  'btn.buy':'Abonează-te – £9.99/lună','soon.title':'Aplicația va apărea în curând în magazine – apasă ca să te abonezi chiar acum','soon.btn':'Descarcă aplicația','soon.badge':'în curând',
   'hero.talk':'Vorbește în:','hero.l.pl':'poloneză','hero.l.ro':'română','hero.l.en':'engleză',
   'per.month':'/ lună','hero.card':'Delegat sindical virtual 24/7',
   'how.eyebrow':'Cum funcționează','how.h2':'De la întrebare la un sfat concret',
@@ -420,7 +422,7 @@ footer a:hover{color:var(--orange)}
   'hero.pill':'Available 24/7 · Union Mate UK',
   'hero.h1':'Your AI union rep in the&nbsp;UK. <em>Always on hand.</em>',
   'hero.lead':'Ask Elon helps Polish and Romanian workers in the UK: it checks your payslip and SSP, prepares you for a disciplinary meeting and writes your letter to HR – in your language, any time of day.',
-  'btn.buy':'Get access – £9.99/month','soon.title':'App coming soon to the app stores','soon.btn':'Download the app','soon.badge':'coming soon',
+  'btn.buy':'Get access – £9.99/month','soon.title':'App coming soon to the app stores – click to get access now','soon.btn':'Download the app','soon.badge':'soon',
   'hero.talk':'Chat in:','hero.l.pl':'Polish','hero.l.ro':'Romanian','hero.l.en':'English',
   'per.month':'/ month','hero.card':'Virtual union rep 24/7',
   'how.eyebrow':'How it works','how.h2':'From a question to practical advice',
