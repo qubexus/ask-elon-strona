@@ -43,7 +43,7 @@ h1 em{font-style:normal;color:var(--orange)}
 .btn-soon{background:rgba(255,255,255,.06);color:#C5D2DC;border:1.5px dashed rgba(255,255,255,.28);cursor:not-allowed}
 .badge-soon{background:#FFD8B8;color:#7A3500;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:6px}
 .langs{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px;font-size:.88rem;color:var(--muted)}
-.langs span{background:rgba(255,255,255,.07);border:1px solid var(--line);padding:4px 11px;border-radius:8px;color:#DCE6ED}
+.langs>span{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid var(--line);padding:4px 11px;border-radius:8px;color:#DCE6ED}
 .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:28px;padding:28px;text-align:center;box-shadow:0 30px 60px rgba(0,0,0,.35)}
 .hero-card img{width:100%;max-width:260px;border-radius:24px;display:block;margin:0 auto 18px}
 .hero-card .price{font-size:2.4rem;font-weight:800;line-height:1}
@@ -181,40 +181,57 @@ footer a:hover{color:var(--orange)}
  .hero-card .logo-lg{width:110px;max-width:110px;margin:0;border-radius:16px;flex:none}
  .hero-card .price{font-size:1.9rem}
 }
+/* language switcher */
+.lang-sw{display:flex;gap:4px;margin-left:auto}
+.lang-sw button{display:inline-flex;align-items:center;gap:5px;background:transparent;border:1px solid var(--line);color:var(--muted);font:700 .76rem/1 inherit;font-family:inherit;padding:6px 8px;border-radius:8px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.lang-sw button:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+.lang-sw button[aria-pressed="true"]{background:rgba(255,122,24,.16);border-color:var(--orange);color:#fff}
+.lang-sw button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.flag{width:20px;height:14px;border-radius:2px;flex:none;display:block;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
+.langs .flag{width:18px;height:12px}
+@media (max-width:600px){.lang-sw{gap:3px}.lang-sw button{padding:5px 5px;gap:4px;font-size:.7rem}.lang-sw .flag{width:18px;height:12px}nav .wrap{gap:8px}.nav-cta{padding:8px 11px}}
+@media (max-width:420px){.brand>span:not(.logo){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+@media (max-width:330px){.lang-sw .code{display:none}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <symbol id="f-pl" viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="10" fill="#fff"/><rect y="10" width="30" height="10" fill="#DC143C"/></symbol>
+ <symbol id="f-ro" viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="10" height="20" fill="#002B7F"/><rect x="10" width="10" height="20" fill="#FCD116"/><rect x="20" width="10" height="20" fill="#CE1126"/></symbol>
+ <symbol id="f-gb" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice"><clipPath id="gb-s"><path d="M0,0v30h60V0z"/></clipPath><clipPath id="gb-t"><path d="M30,15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#gb-s)"><path d="M0,0v30h60V0z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#gb-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></g></symbol>
+</svg>
 
 <nav>
  <div class="wrap">
-  <a class="brand" href="#top"><span class="logo" role="img" aria-label="Logo Ask Elon"></span><span>Ask Elon<small>Union Mate UK</small></span></a>
-  <a class="nav-cta" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04">£9.99/mies.</a>
+  <a class="brand" href="#top"><span class="logo" role="img" aria-label="Logo Ask Elon" data-i18n-attr="aria-label:nav.logo"></span><span>Ask Elon<small>Union Mate UK</small></span></a>
+  <div class="lang-sw" role="group" aria-label="Wybierz język" data-i18n-attr="aria-label:lang.group"><button type="button" data-lang="pl" lang="pl" aria-label="Polski" aria-pressed="true"><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-pl"/></svg><span class="code">PL</span></button><button type="button" data-lang="ro" lang="ro" aria-label="Română" aria-pressed="false"><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-ro"/></svg><span class="code">RO</span></button><button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false"><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-gb"/></svg><span class="code">EN</span></button></div>
+  <a class="nav-cta" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04" data-i18n="nav.cta">£9.99/mies.</a>
  </div>
 </nav>
 
 <div class="build" role="status">
- <div class="wrap"><span>🚧 Ask Elon jest w budowie — finał już blisko</span><a href="#lista">Zapisz się na listę</a></div>
+ <div class="wrap"><span data-i18n="build.text">🚧 Ask Elon jest w budowie — finał już blisko</span><a href="#lista" data-i18n="build.link">Zapisz się na listę</a></div>
 </div>
 
 <header class="hero" id="top">
  <div class="wrap">
   <div>
-   <div class="pill"><span class="dot"></span>Dostępny 24/7 · Union Mate UK</div>
-   <h1>Twój delegat związkowy AI w&nbsp;UK. <em>Zawsze pod ręką.</em></h1>
-   <p class="lead">Ask Elon pomaga Polakom i Rumunom pracującym w Wielkiej Brytanii: sprawdzi payslip i SSP, przygotuje Cię do rozmowy dyscyplinarnej i napisze pismo do HR – w Twoim języku, o każdej porze.</p>
+   <div class="pill"><span class="dot"></span><span data-i18n="hero.pill">Dostępny 24/7 · Union Mate UK</span></div>
+   <h1 data-i18n="hero.h1">Twój delegat związkowy AI w&nbsp;UK. <em>Zawsze pod ręką.</em></h1>
+   <p class="lead" data-i18n="hero.lead">Ask Elon pomaga Polakom i Rumunom pracującym w Wielkiej Brytanii: sprawdzi payslip i SSP, przygotuje Cię do rozmowy dyscyplinarnej i napisze pismo do HR – w Twoim języku, o każdej porze.</p>
    <div class="btns">
-    <a class="btn btn-primary" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04">Wykup dostęp – £9.99/mies.</a>
+    <a class="btn btn-primary" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04" data-i18n="btn.buy">Wykup dostęp – £9.99/mies.</a>
     <!-- LINK DO SKLEPU: gdy aplikacja będzie w App Store / Google Play, zamień poniższy <span> na
          <a class="btn btn-primary" href="TUTAJ_WKLEJ_LINK_DO_SKLEPU">Pobierz aplikację</a> -->
-    <span class="btn btn-soon" aria-disabled="true" title="Aplikacja wkrótce w sklepach">Pobierz aplikację <span class="badge-soon">wkrótce</span></span>
+    <span class="btn btn-soon" aria-disabled="true" title="Aplikacja wkrótce w sklepach" data-i18n-attr="title:soon.title"><span data-i18n="soon.btn">Pobierz aplikację</span> <span class="badge-soon" data-i18n="soon.badge">wkrótce</span></span>
    </div>
-   <div class="langs">Rozmawiaj po: <span>🇵🇱 polsku</span><span>🇷🇴 rumuńsku</span><span>🇬🇧 angielsku</span></div>
+   <div class="langs"><span data-i18n="hero.talk" style="background:none;border:0;padding:4px 0;color:inherit">Rozmawiaj po:</span><span><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-pl"/></svg><b data-i18n="hero.l.pl" style="font-weight:inherit">polsku</b></span><span><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-ro"/></svg><b data-i18n="hero.l.ro" style="font-weight:inherit">rumuńsku</b></span><span><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-gb"/></svg><b data-i18n="hero.l.en" style="font-weight:inherit">angielsku</b></span></div>
   </div>
   <div class="hero-card">
    <span class="logo logo-lg" role="img" aria-label="Ask Elon – Union Mate UK"></span>
    <div>
-    <div class="price">£9.99 <small>/ miesiąc</small></div>
-    <p>Wirtualny delegat związkowy 24/7</p>
+    <div class="price">£9.99 <small data-i18n="per.month">/ miesiąc</small></div>
+    <p data-i18n="hero.card">Wirtualny delegat związkowy 24/7</p>
    </div>
   </div>
  </div>
@@ -222,21 +239,21 @@ footer a:hover{color:var(--orange)}
 
 <section class="how" id="jak">
  <div class="wrap">
-  <div class="eyebrow">Jak to działa</div>
-  <h2>Od pytania do konkretnej porady</h2>
-  <p class="sub">Zobacz, jak Ask Elon prowadzi Cię przez sprawę – na przykładzie wezwania na rozmowę dyscyplinarną.</p>
+  <div class="eyebrow" data-i18n="how.eyebrow">Jak to działa</div>
+  <h2 data-i18n="how.h2">Od pytania do konkretnej porady</h2>
+  <p class="sub" data-i18n="how.sub">Zobacz, jak Ask Elon prowadzi Cię przez sprawę – na przykładzie wezwania na rozmowę dyscyplinarną.</p>
   <noscript><style>.demo .anim{opacity:1;transform:none}.demo .typing{display:none}</style></noscript>
   <div class="demo" id="demo">
    <div class="phone" aria-hidden="true">
     <div class="screen">
-     <div class="ph-head"><span class="logo"></span><div><b>Elon · Twój delegat</b><small>online</small></div></div>
+     <div class="ph-head"><span class="logo"></span><div><b data-i18n="ph.head">Elon · Twój delegat</b><small>online</small></div></div>
      <div class="ph-body">
-      <div class="bub user anim a1">Dostałem wezwanie na rozmowę dyscyplinarną. Co robić?</div>
-      <div class="docs anim a2"><div class="doc">📄 Wezwanie na spotkanie.pdf</div><div class="doc">📄 Umowa o pracę.pdf</div><div class="scan"></div></div>
-      <div class="cat anim a3">🏷️ Rozmowa dyscyplinarna</div>
+      <div class="bub user anim a1" data-i18n="ph.user">Dostałem wezwanie na rozmowę dyscyplinarną. Co robić?</div>
+      <div class="docs anim a2"><div class="doc" data-i18n="ph.doc1">📄 Wezwanie na spotkanie.pdf</div><div class="doc" data-i18n="ph.doc2">📄 Umowa o pracę.pdf</div><div class="scan"></div></div>
+      <div class="cat anim a3" data-i18n="ph.cat">🏷️ Rozmowa dyscyplinarna</div>
       <div class="slot">
        <div class="typing anim a2"><i></i><i></i><i></i></div>
-       <div class="bub ai anim a4">Spokojnie, masz konkretne prawa:
+       <div class="bub ai anim a4" data-i18n="ph.ai">Spokojnie, masz konkretne prawa:
         <ul>
          <li>Możesz przyjść z kolegą z pracy lub przedstawicielem związku.</li>
          <li>Poproś na piśmie o zarzuty i dowody przed spotkaniem.</li>
@@ -244,17 +261,17 @@ footer a:hover{color:var(--orange)}
         </ul>Przygotować Twoje oświadczenie?</div>
       </div>
      </div>
-     <div class="ph-in">Opisz swój problem…</div>
+     <div class="ph-in" data-i18n="ph.in">Opisz swój problem…</div>
     </div>
    </div>
    <div>
     <ol class="wsteps">
-     <li class="wstep" data-step="1"><span class="num">1</span><div><h3>Użytkownik zadaje pytanie w czacie</h3><p>Opisujesz problem własnymi słowami – po polsku, rumuńsku lub angielsku, o dowolnej porze.</p></div><span class="bar"></span></li>
-     <li class="wstep" data-step="2"><span class="num">2</span><div><h3>AI analizuje sprawę i dokumenty</h3><p>Elon bierze pod uwagę Twój opis oraz dokumenty, takie jak umowa, payslip czy wezwanie.</p></div><span class="bar"></span></li>
-     <li class="wstep" data-step="3"><span class="num">3</span><div><h3>Sprawa trafia do odpowiedniej kategorii</h3><p>Np. rozmowa dyscyplinarna, SSP, agencja pracy albo pismo do HR.</p></div><span class="bar"></span></li>
-     <li class="wstep" data-step="4"><span class="num">4</span><div><h3>Użytkownik dostaje odpowiedź i poradę</h3><p>Jasne wyjaśnienie Twoich praw, kolejne kroki i – jeśli trzeba – gotowe pismo.</p></div><span class="bar"></span></li>
+     <li class="wstep" data-step="1"><span class="num">1</span><div><h3 data-i18n="step1.h">Użytkownik zadaje pytanie w czacie</h3><p data-i18n="step1.p">Opisujesz problem własnymi słowami – po polsku, rumuńsku lub angielsku, o dowolnej porze.</p></div><span class="bar"></span></li>
+     <li class="wstep" data-step="2"><span class="num">2</span><div><h3 data-i18n="step2.h">AI analizuje sprawę i dokumenty</h3><p data-i18n="step2.p">Elon bierze pod uwagę Twój opis oraz dokumenty, takie jak umowa, payslip czy wezwanie.</p></div><span class="bar"></span></li>
+     <li class="wstep" data-step="3"><span class="num">3</span><div><h3 data-i18n="step3.h">Sprawa trafia do odpowiedniej kategorii</h3><p data-i18n="step3.p">Np. rozmowa dyscyplinarna, SSP, agencja pracy albo pismo do HR.</p></div><span class="bar"></span></li>
+     <li class="wstep" data-step="4"><span class="num">4</span><div><h3 data-i18n="step4.h">Użytkownik dostaje odpowiedź i poradę</h3><p data-i18n="step4.p">Jasne wyjaśnienie Twoich praw, kolejne kroki i – jeśli trzeba – gotowe pismo.</p></div><span class="bar"></span></li>
     </ol>
-    <p class="how-note">Dostęp: £9.99/mies. przez bezpieczną płatność Stripe. <a href="#cena">Zobacz cenę</a></p>
+    <p class="how-note" data-i18n="how.note">Dostęp: £9.99/mies. przez bezpieczną płatność Stripe. <a href="#cena">Zobacz cenę</a></p>
    </div>
   </div>
  </div>
@@ -262,16 +279,16 @@ footer a:hover{color:var(--orange)}
 
 <section id="funkcje">
  <div class="wrap">
-  <div class="eyebrow">Co potrafi Ask Elon</div>
-  <h2>Wsparcie w sprawach, które naprawdę się zdarzają w pracy</h2>
-  <p class="sub">Problem z wypłatą, chorobowym albo agencją? Opisz go Elonowi – dostaniesz jasne wyjaśnienie i konkretne kolejne kroki.</p>
+  <div class="eyebrow" data-i18n="feat.eyebrow">Co potrafi Ask Elon</div>
+  <h2 data-i18n="feat.h2">Wsparcie w sprawach, które naprawdę się zdarzają w pracy</h2>
+  <p class="sub" data-i18n="feat.sub">Problem z wypłatą, chorobowym albo agencją? Opisz go Elonowi – dostaniesz jasne wyjaśnienie i konkretne kolejne kroki.</p>
   <div class="grid">
-   <div class="card"><div class="icon">🩺</div><h3>SSP i payslipy</h3><p>Pomoc z chorobowym (Statutory Sick Pay) i sprawdzanie payslipów – czy wszystko zostało policzone i wypłacone.</p></div>
-   <div class="card"><div class="icon">🗂️</div><h3>Rozmowy dyscyplinarne</h3><p>Przygotowanie do spotkania dyscyplinarnego: czego się spodziewać i jak spokojnie przedstawić swoją wersję.</p></div>
-   <div class="card"><div class="icon">🏢</div><h3>Agencje pracy</h3><p>Zasady pracy przez agencję i pomoc w sporach z agencją – godziny, stawki, Twoje prawa.</p></div>
-   <div class="card"><div class="icon">✉️</div><h3>Pisma do HR i skargi</h3><p>Gotowe pisma do działu HR i formalne skargi (grievance) – dopasowane do Twojej sytuacji.</p></div>
-   <div class="card"><div class="icon">🔒</div><h3>Twoje dokumenty</h3><p>Przechowuj payslipy, umowy i korespondencję w jednym miejscu – zawsze pod ręką, gdy będą potrzebne.</p></div>
-   <div class="card"><div class="icon">💬</div><h3>Czat AI w Twoim języku</h3><p>Rozmawiaj z Elonem po polsku, rumuńsku lub angielsku – 24 godziny na dobę, 7 dni w tygodniu.</p></div>
+   <div class="card"><div class="icon">🩺</div><h3 data-i18n="card1.h">SSP i payslipy</h3><p data-i18n="card1.p">Pomoc z chorobowym (Statutory Sick Pay) i sprawdzanie payslipów – czy wszystko zostało policzone i wypłacone.</p></div>
+   <div class="card"><div class="icon">🗂️</div><h3 data-i18n="card2.h">Rozmowy dyscyplinarne</h3><p data-i18n="card2.p">Przygotowanie do spotkania dyscyplinarnego: czego się spodziewać i jak spokojnie przedstawić swoją wersję.</p></div>
+   <div class="card"><div class="icon">🏢</div><h3 data-i18n="card3.h">Agencje pracy</h3><p data-i18n="card3.p">Zasady pracy przez agencję i pomoc w sporach z agencją – godziny, stawki, Twoje prawa.</p></div>
+   <div class="card"><div class="icon">✉️</div><h3 data-i18n="card4.h">Pisma do HR i skargi</h3><p data-i18n="card4.p">Gotowe pisma do działu HR i formalne skargi (grievance) – dopasowane do Twojej sytuacji.</p></div>
+   <div class="card"><div class="icon">🔒</div><h3 data-i18n="card5.h">Twoje dokumenty</h3><p data-i18n="card5.p">Przechowuj payslipy, umowy i korespondencję w jednym miejscu – zawsze pod ręką, gdy będą potrzebne.</p></div>
+   <div class="card"><div class="icon">💬</div><h3 data-i18n="card6.h">Czat AI w Twoim języku</h3><p data-i18n="card6.p">Rozmawiaj z Elonem po polsku, rumuńsku lub angielsku – 24 godziny na dobę, 7 dni w tygodniu.</p></div>
   </div>
  </div>
 </section>
@@ -280,19 +297,19 @@ footer a:hover{color:var(--orange)}
  <div class="wrap">
   <div class="wl-box">
    <div>
-    <div class="eyebrow">Lista oczekujących</div>
-    <h2>Bądź pierwszy, gdy wystartujemy</h2>
-    <p class="sub">Zostaw e-mail, a damy Ci znać, gdy aplikacja Ask Elon będzie gotowa do pobrania.</p>
+    <div class="eyebrow" data-i18n="wl.eyebrow">Lista oczekujących</div>
+    <h2 data-i18n="wl.h2">Bądź pierwszy, gdy wystartujemy</h2>
+    <p class="sub" data-i18n="wl.sub">Zostaw e-mail, a damy Ci znać, gdy aplikacja Ask Elon będzie gotowa do pobrania.</p>
    </div>
    <div>
     <!-- Lokalnie (127.0.0.1/localhost) formularz wysyła POST na /api/waitlist. Na publicznym hostingu otwiera mailto: do jocobisun@gmail.com. -->
     <form class="wl-form" id="wl-form" action="/api/waitlist" method="post" novalidate>
-     <label for="wl-email" class="sr-only" style="position:absolute;left:-9999px">Adres e-mail</label>
-     <input id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="twoj@email.com" required maxlength="254">
-     <button type="submit" id="wl-btn">Zapisz mnie</button>
+     <label for="wl-email" class="sr-only" style="position:absolute;left:-9999px" data-i18n="wl.label">Adres e-mail</label>
+     <input id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="twoj@email.com" data-i18n-attr="placeholder:wl.ph" required maxlength="254">
+     <button type="submit" id="wl-btn" data-i18n="wl.btn">Zapisz mnie</button>
     </form>
     <p class="wl-msg" id="wl-msg" aria-live="polite"></p>
-    <p class="wl-note">Użyjemy Twojego adresu tylko po to, by poinformować Cię o starcie aplikacji.</p>
+    <p class="wl-note" data-i18n="wl.note">Użyjemy Twojego adresu tylko po to, by poinformować Cię o starcie aplikacji.</p>
    </div>
   </div>
  </div>
@@ -301,21 +318,21 @@ footer a:hover{color:var(--orange)}
 <section id="cena">
  <div class="wrap pricing">
   <div>
-   <div class="eyebrow">Cena</div>
-   <h2>Jedna prosta subskrypcja</h2>
-   <p class="sub">Za mniej niż £10 miesięcznie masz wirtualnego delegata związkowego, który jest dostępny zawsze, gdy w pracy pojawia się problem.</p>
+   <div class="eyebrow" data-i18n="price.eyebrow">Cena</div>
+   <h2 data-i18n="price.h2">Jedna prosta subskrypcja</h2>
+   <p class="sub" data-i18n="price.sub">Za mniej niż £10 miesięcznie masz wirtualnego delegata związkowego, który jest dostępny zawsze, gdy w pracy pojawia się problem.</p>
   </div>
   <div class="price-box">
-   <div class="amount">£9.99 <small>/ miesiąc</small></div>
+   <div class="amount">£9.99 <small data-i18n="per.month">/ miesiąc</small></div>
    <ul>
-    <li>SSP, payslipy i zaległe wynagrodzenie</li>
-    <li>Przygotowanie do rozmów dyscyplinarnych</li>
-    <li>Zasady i spory z agencjami pracy</li>
-    <li>Pisma do HR i formalne skargi</li>
-    <li>Przechowywanie dokumentów</li>
-    <li>Czat AI po polsku, rumuńsku i angielsku</li>
+    <li data-i18n="price.li1">SSP, payslipy i zaległe wynagrodzenie</li>
+    <li data-i18n="price.li2">Przygotowanie do rozmów dyscyplinarnych</li>
+    <li data-i18n="price.li3">Zasady i spory z agencjami pracy</li>
+    <li data-i18n="price.li4">Pisma do HR i formalne skargi</li>
+    <li data-i18n="price.li5">Przechowywanie dokumentów</li>
+    <li data-i18n="price.li6">Czat AI po polsku, rumuńsku i angielsku</li>
    </ul>
-   <a class="btn btn-primary" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04">Wykup dostęp – £9.99/mies.</a>
+   <a class="btn btn-primary" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04" data-i18n="btn.buy">Wykup dostęp – £9.99/mies.</a>
   </div>
  </div>
 </section>
@@ -324,11 +341,11 @@ footer a:hover{color:var(--orange)}
  <div class="wrap">
   <div class="foot">
    <div>
-    <a class="brand" href="#top"><span class="logo" role="img" aria-label="Logo Ask Elon"></span><span>Ask Elon<small>Union Mate UK</small></span></a>
-    <p style="color:var(--muted);margin-top:12px;max-width:340px">Wirtualny delegat związkowy AI dla polskich i rumuńskich pracowników w Wielkiej Brytanii.</p>
+    <a class="brand" href="#top"><span class="logo" role="img" aria-label="Logo Ask Elon" data-i18n-attr="aria-label:nav.logo"></span><span>Ask Elon<small>Union Mate UK</small></span></a>
+    <p style="color:var(--muted);margin-top:12px;max-width:340px" data-i18n="foot.desc">Wirtualny delegat związkowy AI dla polskich i rumuńskich pracowników w Wielkiej Brytanii.</p>
    </div>
    <div>
-    <h4>Linki</h4>
+    <h4 data-i18n="foot.links">Linki</h4>
     <ul>
      <li><a href="https://x.com/jocobisun" target="_blank" rel="noopener">X (Twitter) · @jocobisun</a></li>
      <li><a href="https://github.com/qubexus" target="_blank" rel="noopener">GitHub · qubexus</a></li>
@@ -337,49 +354,205 @@ footer a:hover{color:var(--orange)}
     </ul>
    </div>
    <div>
-    <h4>Kontakt</h4>
+    <h4 data-i18n="foot.contact">Kontakt</h4>
     <ul>
      <li><a href="mailto:jocobisun@gmail.com">jocobisun@gmail.com</a></li>
-     <li><a href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04">Wykup dostęp</a></li>
+     <li><a href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04" data-i18n="foot.buy">Wykup dostęp</a></li>
     </ul>
    </div>
   </div>
   <div class="disclaimer">
-   <span>Ask Elon nie jest kancelarią prawną, a odpowiedzi AI nie zastępują porady prawnej.</span>
+   <span data-i18n="foot.disc">Ask Elon nie jest kancelarią prawną, a odpowiedzi AI nie zastępują porady prawnej.</span>
    <span>© 2026 Ask Elon – Union Mate UK</span>
   </div>
  </div>
 </footer>
 <script>
 (function(){
+ var T={
+ ro:{
+  'meta.title':'Ask Elon – Union Mate UK | Delegatul tău sindical AI în UK, 24/7',
+  'meta.desc':'Ask Elon – delegat sindical AI pentru polonezii și românii care lucrează în UK. SSP, fluturași de salariu, ședințe disciplinare, agenții, scrisori către HR. 24/7, în poloneză, română și engleză. £9.99/lună.',
+  'nav.logo':'Sigla Ask Elon','lang.group':'Alege limba','nav.cta':'£9.99/lună',
+  'build.text':'🚧 Ask Elon este în construcție — lansarea e aproape','build.link':'Înscrie-te pe listă',
+  'hero.pill':'Disponibil 24/7 · Union Mate UK',
+  'hero.h1':'Delegatul tău sindical AI în&nbsp;UK. <em>Mereu la îndemână.</em>',
+  'hero.lead':'Ask Elon îi ajută pe polonezii și românii care lucrează în Marea Britanie: îți verifică fluturașul de salariu și SSP-ul, te pregătește pentru ședința disciplinară și îți scrie scrisoarea către HR – în limba ta, la orice oră.',
+  'btn.buy':'Abonează-te – £9.99/lună','soon.title':'Aplicația va apărea în curând în magazine','soon.btn':'Descarcă aplicația','soon.badge':'în curând',
+  'hero.talk':'Vorbește în:','hero.l.pl':'poloneză','hero.l.ro':'română','hero.l.en':'engleză',
+  'per.month':'/ lună','hero.card':'Delegat sindical virtual 24/7',
+  'how.eyebrow':'Cum funcționează','how.h2':'De la întrebare la un sfat concret',
+  'how.sub':'Vezi cum te ghidează Ask Elon prin cazul tău – pe exemplul unei convocări la o ședință disciplinară.',
+  'ph.head':'Elon · Delegatul tău','ph.user':'Am primit o convocare la o ședință disciplinară. Ce fac?',
+  'ph.doc1':'📄 Convocare la ședință.pdf','ph.doc2':'📄 Contract de muncă.pdf','ph.cat':'🏷️ Ședință disciplinară',
+  'ph.ai':'Fii calm, ai drepturi clare:<ul><li>Poți veni însoțit de un coleg sau de un reprezentant sindical.</li><li>Cere în scris acuzațiile și dovezile înainte de ședință.</li><li>Notează-ți versiunea ta a evenimentelor, cu date.</li></ul>Să-ți pregătesc declarația?',
+  'ph.in':'Descrie-ți problema…',
+  'step1.h':'Utilizatorul pune o întrebare în chat','step1.p':'Îți descrii problema cu propriile cuvinte – în poloneză, română sau engleză, la orice oră.',
+  'step2.h':'AI-ul analizează cazul și documentele','step2.p':'Elon ține cont de descrierea ta și de documente precum contractul, fluturașul de salariu sau convocarea.',
+  'step3.h':'Cazul ajunge în categoria potrivită','step3.p':'De ex. ședință disciplinară, SSP, agenție de muncă sau scrisoare către HR.',
+  'step4.h':'Utilizatorul primește un răspuns și un sfat','step4.p':'O explicație clară a drepturilor tale, pașii următori și – dacă e nevoie – o scrisoare gata făcută.',
+  'how.note':'Acces: £9.99/lună, cu plată securizată prin Stripe. <a href="#cena">Vezi prețul</a>',
+  'feat.eyebrow':'Ce poate face Ask Elon','feat.h2':'Sprijin în situațiile care chiar se întâmplă la muncă',
+  'feat.sub':'Probleme cu salariul, concediul medical sau agenția? Descrie-i-le lui Elon – primești o explicație clară și pașii concreți de urmat.',
+  'card1.h':'SSP și fluturași de salariu','card1.p':'Ajutor cu indemnizația de boală (Statutory Sick Pay) și verificarea fluturașilor de salariu – dacă totul a fost calculat și plătit corect.',
+  'card2.h':'Ședințe disciplinare','card2.p':'Pregătire pentru ședința disciplinară: la ce să te aștepți și cum să-ți prezinți calm versiunea.',
+  'card3.h':'Agenții de muncă','card3.p':'Regulile muncii prin agenție și ajutor în disputele cu agenția – ore, tarife, drepturile tale.',
+  'card4.h':'Scrisori către HR și plângeri','card4.p':'Scrisori gata făcute către departamentul HR și plângeri formale (grievance) – adaptate situației tale.',
+  'card5.h':'Documentele tale','card5.p':'Păstrează fluturașii de salariu, contractele și corespondența într-un singur loc – mereu la îndemână când ai nevoie de ele.',
+  'card6.h':'Chat AI în limba ta','card6.p':'Vorbește cu Elon în poloneză, română sau engleză – 24 de ore din 24, 7 zile din 7.',
+  'wl.eyebrow':'Listă de așteptare','wl.h2':'Fii printre primii când lansăm',
+  'wl.sub':'Lasă-ne adresa de e-mail și te anunțăm când aplicația Ask Elon va fi gata de descărcat.',
+  'wl.label':'Adresă de e-mail','wl.ph':'adresa.ta@email.com','wl.btn':'Înscrie-mă',
+  'wl.note':'Vom folosi adresa ta doar ca să te anunțăm când se lansează aplicația.',
+  'price.eyebrow':'Preț','price.h2':'Un singur abonament, simplu',
+  'price.sub':'Pentru mai puțin de £10 pe lună ai un delegat sindical virtual, disponibil oricând apare o problemă la muncă.',
+  'price.li1':'SSP, fluturași de salariu și salarii restante','price.li2':'Pregătire pentru ședințele disciplinare','price.li3':'Reguli și dispute cu agențiile de muncă',
+  'price.li4':'Scrisori către HR și plângeri formale','price.li5':'Păstrarea documentelor','price.li6':'Chat AI în poloneză, română și engleză',
+  'foot.desc':'Delegat sindical virtual AI pentru lucrătorii polonezi și români din Marea Britanie.',
+  'foot.links':'Linkuri','foot.contact':'Contact','foot.buy':'Abonează-te',
+  'foot.disc':'Ask Elon nu este o firmă de avocatură, iar răspunsurile AI nu înlocuiesc consultanța juridică.'
+ },
+ en:{
+  'meta.title':'Ask Elon – Union Mate UK | Your AI union rep in the UK, 24/7',
+  'meta.desc':'Ask Elon – an AI union rep for Polish and Romanian workers in the UK. SSP, payslips, disciplinary meetings, agencies, letters to HR. 24/7, in Polish, Romanian and English. £9.99/month.',
+  'nav.logo':'Ask Elon logo','lang.group':'Choose language','nav.cta':'£9.99/mo',
+  'build.text':'🚧 Ask Elon is under construction — launch is almost here','build.link':'Join the waitlist',
+  'hero.pill':'Available 24/7 · Union Mate UK',
+  'hero.h1':'Your AI union rep in the&nbsp;UK. <em>Always on hand.</em>',
+  'hero.lead':'Ask Elon helps Polish and Romanian workers in the UK: it checks your payslip and SSP, prepares you for a disciplinary meeting and writes your letter to HR – in your language, any time of day.',
+  'btn.buy':'Get access – £9.99/month','soon.title':'App coming soon to the app stores','soon.btn':'Download the app','soon.badge':'coming soon',
+  'hero.talk':'Chat in:','hero.l.pl':'Polish','hero.l.ro':'Romanian','hero.l.en':'English',
+  'per.month':'/ month','hero.card':'Virtual union rep 24/7',
+  'how.eyebrow':'How it works','how.h2':'From a question to practical advice',
+  'how.sub':'See how Ask Elon guides you through a case – using an invitation to a disciplinary meeting as an example.',
+  'ph.head':'Elon · Your rep','ph.user':'I’ve been called to a disciplinary meeting. What should I do?',
+  'ph.doc1':'📄 Meeting invitation.pdf','ph.doc2':'📄 Employment contract.pdf','ph.cat':'🏷️ Disciplinary meeting',
+  'ph.ai':'Stay calm – you have clear rights:<ul><li>You can bring a colleague or a trade union rep with you.</li><li>Ask for the allegations and evidence in writing before the meeting.</li><li>Write down your version of events, with dates.</li></ul>Shall I prepare your statement?',
+  'ph.in':'Describe your problem…',
+  'step1.h':'You ask a question in the chat','step1.p':'Describe the problem in your own words – in Polish, Romanian or English, at any time.',
+  'step2.h':'The AI analyses your case and documents','step2.p':'Elon takes into account your description and documents such as your contract, payslip or meeting invitation.',
+  'step3.h':'Your case goes into the right category','step3.p':'For example: disciplinary meeting, SSP, employment agency or a letter to HR.',
+  'step4.h':'You get an answer and advice','step4.p':'A clear explanation of your rights, the next steps and – if needed – a ready-made letter.',
+  'how.note':'Access: £9.99/month with secure Stripe payment. <a href="#cena">See pricing</a>',
+  'feat.eyebrow':'What Ask Elon can do','feat.h2':'Support with the problems that really happen at work',
+  'feat.sub':'Problems with pay, sick pay or your agency? Tell Elon about it – you’ll get a clear explanation and concrete next steps.',
+  'card1.h':'SSP and payslips','card1.p':'Help with Statutory Sick Pay and checking your payslips – making sure everything has been calculated and paid correctly.',
+  'card2.h':'Disciplinary meetings','card2.p':'Get ready for a disciplinary meeting: what to expect and how to calmly put your side of the story.',
+  'card3.h':'Employment agencies','card3.p':'The rules of agency work and help with agency disputes – hours, pay rates and your rights.',
+  'card4.h':'Letters to HR and grievances','card4.p':'Ready-made letters to HR and formal grievances – tailored to your situation.',
+  'card5.h':'Your documents','card5.p':'Keep payslips, contracts and correspondence in one place – always at hand when you need them.',
+  'card6.h':'AI chat in your language','card6.p':'Talk to Elon in Polish, Romanian or English – 24 hours a day, 7 days a week.',
+  'wl.eyebrow':'Waitlist','wl.h2':'Be the first to know when we launch',
+  'wl.sub':'Leave your email and we’ll let you know when the Ask Elon app is ready to download.',
+  'wl.label':'Email address','wl.ph':'your@email.com','wl.btn':'Sign me up',
+  'wl.note':'We’ll only use your address to tell you when the app launches.',
+  'price.eyebrow':'Pricing','price.h2':'One simple subscription',
+  'price.sub':'For less than £10 a month you get a virtual union rep who’s there whenever a problem comes up at work.',
+  'price.li1':'SSP, payslips and unpaid wages','price.li2':'Preparing for disciplinary meetings','price.li3':'Agency rules and disputes',
+  'price.li4':'Letters to HR and formal grievances','price.li5':'Document storage','price.li6':'AI chat in Polish, Romanian and English',
+  'foot.desc':'A virtual AI union rep for Polish and Romanian workers in the UK.',
+  'foot.links':'Links','foot.contact':'Contact','foot.buy':'Get access',
+  'foot.disc':'Ask Elon is not a law firm, and AI answers are not a substitute for legal advice.'
+ }};
+ var MSG={
+ pl:{'f.invalid':'Wpisz poprawny adres e-mail, np. jan@gmail.com.',
+  'f.file':'Formularz działa dopiero na stronie uruchomionej na serwerze. Na razie napisz do nas: jocobisun@gmail.com.',
+  'f.saving':'Zapisuję…','f.dup':'Ten adres jest już na liście — damy znać przy starcie!',
+  'f.ok':'Dziękujemy! Jesteś na liście. Damy Ci znać, gdy Ask Elon wystartuje.',
+  'f.bad':'Ten adres e-mail wygląda na niepoprawny. Sprawdź go i spróbuj ponownie.',
+  'f.inactive':'Zapisy nie są tu jeszcze aktywne. Napisz do nas: jocobisun@gmail.com.',
+  'f.err':'Coś poszło nie tak. Spróbuj ponownie za chwilę.',
+  'f.conn':'Nie udało się połączyć z serwerem zapisów. Spróbuj później albo napisz: jocobisun@gmail.com.',
+  'mail.subject':'Zapis na listę oczekujących Ask Elon',
+  'mail.body':'Cześć, proszę o zapisanie mnie na listę oczekujących Ask Elon.\nMój adres e-mail: ',
+  'mail.note1':'Zapisy online nie są jeszcze aktywne, więc Twój adres nie został zapisany. Otwieramy Twój program pocztowy z gotową wiadomością — wystarczy ją wysłać. Jeśli się nie otworzył, ',
+  'mail.link':'kliknij tutaj','mail.note2':' albo napisz na jocobisun@gmail.com.'},
+ ro:{'f.invalid':'Introdu o adresă de e-mail validă, de ex. ion@gmail.com.',
+  'f.file':'Formularul funcționează doar când pagina rulează pe un server. Deocamdată scrie-ne la: jocobisun@gmail.com.',
+  'f.saving':'Se salvează…','f.dup':'Această adresă este deja pe listă — te anunțăm la lansare!',
+  'f.ok':'Mulțumim! Ești pe listă. Te anunțăm când se lansează Ask Elon.',
+  'f.bad':'Această adresă de e-mail pare greșită. Verific-o și încearcă din nou.',
+  'f.inactive':'Înscrierile nu sunt încă active aici. Scrie-ne la: jocobisun@gmail.com.',
+  'f.err':'Ceva n-a mers bine. Încearcă din nou peste câteva momente.',
+  'f.conn':'Nu ne-am putut conecta la serverul de înscrieri. Încearcă mai târziu sau scrie-ne la: jocobisun@gmail.com.',
+  'mail.subject':'Înscriere pe lista de așteptare Ask Elon',
+  'mail.body':'Bună ziua, vă rog să mă înscrieți pe lista de așteptare Ask Elon.\nAdresa mea de e-mail: ',
+  'mail.note1':'Înscrierile online nu sunt încă active, așa că adresa ta nu a fost salvată. Îți deschidem programul de e-mail cu un mesaj pregătit — trebuie doar să-l trimiți. Dacă nu s-a deschis, ',
+  'mail.link':'apasă aici','mail.note2':' sau scrie-ne la jocobisun@gmail.com.'},
+ en:{'f.invalid':'Enter a valid email address, e.g. john@gmail.com.',
+  'f.file':'The form only works when the page is running on a server. For now, email us at: jocobisun@gmail.com.',
+  'f.saving':'Saving…','f.dup':'This address is already on the list — we’ll let you know at launch!',
+  'f.ok':'Thank you! You’re on the list. We’ll let you know when Ask Elon launches.',
+  'f.bad':'This email address doesn’t look right. Please check it and try again.',
+  'f.inactive':'Sign-ups aren’t active here yet. Email us at: jocobisun@gmail.com.',
+  'f.err':'Something went wrong. Please try again in a moment.',
+  'f.conn':'We couldn’t reach the sign-up server. Try again later or email us at: jocobisun@gmail.com.',
+  'mail.subject':'Ask Elon waitlist sign-up',
+  'mail.body':'Hi, please add me to the Ask Elon waitlist.\nMy email address: ',
+  'mail.note1':'Online sign-ups aren’t active yet, so your address has not been saved. We’re opening your email app with a ready-made message — just send it. If it didn’t open, ',
+  'mail.link':'click here','mail.note2':' or email us at jocobisun@gmail.com.'}};
+ var LANGS=['pl','ro','en'],KEY='askelon-lang',cur='pl';
+ var desc=document.querySelector('meta[name="description"]');
+ var PL={'meta.title':document.title,'meta.desc':desc?desc.getAttribute('content'):''};
+ var els=[].slice.call(document.querySelectorAll('[data-i18n]'));
+ els.forEach(function(el){PL[el.getAttribute('data-i18n')]=el.innerHTML;});
+ var attrEls=[].slice.call(document.querySelectorAll('[data-i18n-attr]'));
+ attrEls.forEach(function(el){el.getAttribute('data-i18n-attr').split(';').forEach(function(p){var kv=p.split(':');PL[kv[1]]=el.getAttribute(kv[0]);});});
+ function tr(k){return cur==='pl'?PL[k]:(T[cur][k]!=null?T[cur][k]:PL[k]);}
+ window.askElonMsg=function(k){return (MSG[cur]&&MSG[cur][k])||MSG.pl[k]||k;};
+ function apply(l,save){
+  if(LANGS.indexOf(l)<0)l='pl';cur=l;
+  document.documentElement.lang=l;
+  els.forEach(function(el){var v=tr(el.getAttribute('data-i18n'));if(v!=null&&el.innerHTML!==v)el.innerHTML=v;});
+  attrEls.forEach(function(el){el.getAttribute('data-i18n-attr').split(';').forEach(function(p){var kv=p.split(':');var v=tr(kv[1]);if(v!=null)el.setAttribute(kv[0],v);});});
+  document.title=tr('meta.title');if(desc)desc.setAttribute('content',tr('meta.desc'));
+  [].forEach.call(document.querySelectorAll('.lang-sw button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false');});
+  if(save){try{localStorage.setItem(KEY,l);}catch(e){}
+   try{var u=new URL(location.href);if(l==='pl')u.searchParams.delete('lang');else u.searchParams.set('lang',l);history.replaceState(null,'',u.toString());}catch(e){}}
+  try{document.dispatchEvent(new CustomEvent('askelon:lang',{detail:l}));}catch(e){}
+ }
+ [].forEach.call(document.querySelectorAll('.lang-sw button'),function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-lang'),true);});});
+ var q=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}
+ if(q)q=q.toLowerCase();
+ if(q&&LANGS.indexOf(q)>=0){apply(q,false);try{localStorage.setItem(KEY,q);}catch(e){}}
+ else{var st=null;try{st=localStorage.getItem(KEY);}catch(e){}apply(st&&LANGS.indexOf(st)>=0?st:'pl',false);}
+})();
+
+</script>
+<script>
+(function(){
  var f=document.getElementById('wl-form'),i=document.getElementById('wl-email'),b=document.getElementById('wl-btn'),m=document.getElementById('wl-msg');
  var re=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
- function say(t,c){m.textContent=t;m.className='wl-msg '+c;}
+ var last=null;
+ function T(k){return window.askElonMsg(k);}
+ function say(k,c){last={k:k,c:c};m.textContent=T(k);m.className='wl-msg '+c;}
+ function mailNote(v){last={mail:v};var mt='mailto:jocobisun@gmail.com?subject='+encodeURIComponent(T('mail.subject'))+'&body='+encodeURIComponent(T('mail.body')+v);
+  m.className='wl-msg info';m.textContent='';
+  m.appendChild(document.createTextNode(T('mail.note1')));
+  var a=document.createElement('a');a.href=mt;a.textContent=T('mail.link');a.style.textDecoration='underline';m.appendChild(a);
+  m.appendChild(document.createTextNode(T('mail.note2')));return mt;}
+ document.addEventListener('askelon:lang',function(){if(!last)return;if(last.mail)mailNote(last.mail);else say(last.k,last.c);});
  f.addEventListener('submit',function(e){
   e.preventDefault();
   var v=i.value.trim();
-  if(!re.test(v)){i.setAttribute('aria-invalid','true');say('Wpisz poprawny adres e-mail, np. jan@gmail.com.','err');i.focus();return;}
+  if(!re.test(v)){i.setAttribute('aria-invalid','true');say('f.invalid','err');i.focus();return;}
   i.removeAttribute('aria-invalid');
   var h=location.hostname;
   if(location.protocol!=='file:'&&h!=='127.0.0.1'&&h!=='localhost'&&h!=='::1'&&h!=='[::1]'){
-   var mt='mailto:jocobisun@gmail.com?subject='+encodeURIComponent('Zapis na listę oczekujących Ask Elon')+'&body='+encodeURIComponent('Cześć, proszę o zapisanie mnie na listę oczekujących Ask Elon.\nMój adres e-mail: '+v);
-   m.className='wl-msg info';m.textContent='';
-   m.appendChild(document.createTextNode('Zapisy online nie są jeszcze aktywne, więc Twój adres nie został zapisany. Otwieramy Twój program pocztowy z gotową wiadomością — wystarczy ją wysłać. Jeśli się nie otworzył, '));
-   var a=document.createElement('a');a.href=mt;a.textContent='kliknij tutaj';a.style.textDecoration='underline';m.appendChild(a);
-   m.appendChild(document.createTextNode(' albo napisz na jocobisun@gmail.com.'));
+   var mt=mailNote(v);
    window.location.href=mt;return;
   }
-  if(location.protocol==='file:'){say('Formularz działa dopiero na stronie uruchomionej na serwerze. Na razie napisz do nas: jocobisun@gmail.com.','info');return;}
-  b.disabled=true;say('Zapisuję…','info');
+  if(location.protocol==='file:'){say('f.file','info');return;}
+  b.disabled=true;say('f.saving','info');
   fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:v})})
    .then(function(r){return r.json().catch(function(){return {ok:false,error:'server'};}).then(function(d){return {s:r.status,d:d};});})
    .then(function(x){
-    if(x.d&&x.d.ok){say(x.d.duplicate?'Ten adres jest już na liście — damy znać przy starcie!':'Dziękujemy! Jesteś na liście. Damy Ci znać, gdy Ask Elon wystartuje.','ok');f.reset();}
-    else if(x.d&&x.d.error==='invalid_email'){say('Ten adres e-mail wygląda na niepoprawny. Sprawdź go i spróbuj ponownie.','err');}
-    else if(x.s===404||x.s===405||x.s===501){say('Zapisy nie są tu jeszcze aktywne. Napisz do nas: jocobisun@gmail.com.','info');}
-    else{say('Coś poszło nie tak. Spróbuj ponownie za chwilę.','err');}
+    if(x.d&&x.d.ok){say(x.d.duplicate?'f.dup':'f.ok','ok');f.reset();}
+    else if(x.d&&x.d.error==='invalid_email'){say('f.bad','err');}
+    else if(x.s===404||x.s===405||x.s===501){say('f.inactive','info');}
+    else{say('f.err','err');}
    })
-   .catch(function(){say('Nie udało się połączyć z serwerem zapisów. Spróbuj później albo napisz: jocobisun@gmail.com.','info');})
+   .catch(function(){say('f.conn','info');})
    .then(function(){b.disabled=false;});
  });
 })();
