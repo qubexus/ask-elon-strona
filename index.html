@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--green:#1D4F3C;--orange:#FF7A18;--navy:#132B41;--graphite:#0F1A24;--text:#E8EEF2;--muted:#A9B8C4;--card:#16283A;--line:rgba(255,255,255,.09)}
+:root{--green:#0B6E4F;--orange:#FF6A00;--navy:#0A2A5C;--graphite:#070F1A;--text:#F4F8FB;--muted:#BACADA;--card:#0F2C4D;--line:rgba(255,255,255,.13)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--graphite);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -23,31 +23,40 @@ a{color:inherit}
 .brand .logo{width:38px;height:38px;border-radius:10px;flex:none}
 .logo-lg{width:100%;max-width:260px;aspect-ratio:1;border-radius:24px;margin:0 auto 18px}
 /* nav */
-nav{position:sticky;top:0;z-index:10;background:rgba(15,26,36,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,15,26,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:1.1rem;white-space:nowrap}
 .brand img{width:38px;height:38px;border-radius:10px}
 .brand small{display:block;font-weight:500;font-size:.72rem;color:var(--muted);line-height:1}
 .nav-cta{background:var(--orange);color:#1a0d00;text-decoration:none;font-weight:700;font-size:.9rem;padding:9px 16px;border-radius:999px;white-space:nowrap}
 /* hero */
-header.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 600px at 85% -10%,rgba(255,122,24,.18),transparent 60%),linear-gradient(160deg,var(--green) 0%,var(--navy) 55%,var(--graphite) 100%)}
+header.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 600px at 85% -10%,rgba(255,106,0,.18),transparent 60%),linear-gradient(160deg,var(--green) 0%,var(--navy) 55%,var(--graphite) 100%)}
 .hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:80px}
-.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:.85rem;color:#D6E2EA;margin-bottom:20px}
-.dot{width:8px;height:8px;border-radius:50%;background:#3BD08F;box-shadow:0 0 0 4px rgba(59,208,143,.2)}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:.85rem;color:#E1ECF5;margin-bottom:20px}
+.dot{width:8px;height:8px;border-radius:50%;background:#2EE59D;box-shadow:0 0 0 4px rgba(46,229,157,.2)}
 h1{text-wrap:balance;font-size:clamp(2.1rem,5.2vw,3.6rem);line-height:1.08;font-weight:800;letter-spacing:-.02em}
 h1 em{font-style:normal;color:var(--orange)}
-.lead{font-size:clamp(1.05rem,2.2vw,1.25rem);color:#D0DCE5;margin:20px 0 30px;max-width:560px}
+.lead{font-size:clamp(1.05rem,2.2vw,1.25rem);color:#DCE8F2;margin:20px 0 30px;max-width:560px}
 .btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .btns .btn{min-height:58px;box-sizing:border-box}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:1.02rem;padding:15px 24px;border-radius:14px;text-decoration:none;transition:transform .15s,box-shadow .15s}
-.btn-primary{background:var(--orange);color:#1a0d00;box-shadow:0 10px 30px rgba(255,122,24,.35)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,122,24,.45)}
-.btn-soon{background:rgba(255,255,255,.06);color:#C5D2DC;border:1.5px dashed rgba(255,255,255,.28);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.btn-primary{background:var(--orange);color:#1a0d00;box-shadow:0 10px 30px rgba(255,106,0,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,106,0,.45)}
+.btn-soon{background:rgba(255,255,255,.06);color:#D3DFEA;border:1.5px dashed rgba(255,255,255,.28);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
 .btn-soon:hover,.btn-soon:focus-visible{background:rgba(255,255,255,.12);border-color:var(--orange);color:#fff}
 .btn-soon .sep{opacity:.7}
-.badge-soon{background:#FFD8B8;color:#7A3500;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:6px}
+.btn-early{text-align:center;background:var(--orange);color:#1a0d00;border:0;cursor:pointer;text-decoration:none;box-shadow:0 10px 30px rgba(255,106,0,.35);transition:transform .15s,box-shadow .15s}
+.btn-early:hover,.btn-early:focus-visible{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,106,0,.45)}
+.btn-early:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn-early .arr{transition:transform .15s}
+.btn-early:hover .arr{transform:translateY(2px)}
+.cta-note{display:flex;align-items:flex-start;gap:10px;margin-top:16px;max-width:560px;font-size:.92rem;line-height:1.5;color:#DCE8F2}
+.cta-note .dot{flex:none;margin-top:6px;background:var(--orange);box-shadow:0 0 0 4px rgba(255,106,0,.22)}
+#lista{scroll-margin-top:64px}
+.hero-card img.logo-new{display:block;height:auto;border-radius:20.3%;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.badge-soon{background:#FFD3A6;color:#6B2800;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:6px}
 .langs{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px;font-size:.88rem;color:var(--muted)}
-.langs>span{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid var(--line);padding:4px 11px;border-radius:8px;color:#DCE6ED}
+.langs>span{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid var(--line);padding:4px 11px;border-radius:8px;color:#E6EFF6}
 .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:28px;padding:28px;text-align:center;box-shadow:0 30px 60px rgba(0,0,0,.35)}
 .hero-card img{width:100%;max-width:260px;border-radius:24px;display:block;margin:0 auto 18px}
 .hero-card .price{font-size:2.4rem;font-weight:800;line-height:1}
@@ -60,55 +69,55 @@ h2{text-wrap:balance;max-width:760px;font-size:clamp(1.7rem,3.6vw,2.4rem);line-h
 .sub{color:var(--muted);max-width:640px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;transition:border-color .2s,transform .2s}
-.card:hover{border-color:rgba(255,122,24,.5);transform:translateY(-3px)}
-.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:rgba(29,79,60,.55);border:1px solid rgba(59,208,143,.25);margin-bottom:16px}
+.card:hover{border-color:rgba(255,106,0,.5);transform:translateY(-3px)}
+.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:rgba(11,110,79,.55);border:1px solid rgba(46,229,157,.25);margin-bottom:16px}
 .card h3{font-size:1.12rem;margin-bottom:6px}
 .card p{color:var(--muted);font-size:.96rem}
 /* pricing */
 .pricing{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.price-box{background:linear-gradient(160deg,var(--green),#173E30);border-radius:26px;padding:34px;border:1px solid rgba(59,208,143,.25);box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.price-box{background:linear-gradient(160deg,var(--green),#054A34);border-radius:26px;padding:34px;border:1px solid rgba(46,229,157,.25);box-shadow:0 24px 50px rgba(0,0,0,.35)}
 .price-box .amount{font-size:3.2rem;font-weight:800;line-height:1}
-.price-box .amount small{font-size:1.1rem;color:#BFD6CB;font-weight:600}
+.price-box .amount small{font-size:1.1rem;color:#C6EBD9;font-weight:600}
 .price-box ul{list-style:none;margin:22px 0 26px}
-.price-box li{padding:7px 0 7px 30px;position:relative;color:#E3EEE8}
+.price-box li{padding:7px 0 7px 30px;position:relative;color:#EDF8F2}
 .price-box li::before{content:"✓";position:absolute;left:0;top:6px;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#1a0d00;font-size:.75rem;font-weight:800;display:grid;place-items:center}
 .price-box .btn{width:100%}
 /* footer */
-footer{background:#0A121A;border-top:1px solid var(--line);padding:48px 0 32px;font-size:.93rem}
+footer{background:#040A12;border-top:1px solid var(--line);padding:48px 0 32px;font-size:.93rem}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
 footer h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px}
 footer ul{list-style:none}
 footer li{margin:6px 0}
-footer a{text-decoration:none;color:#DCE6ED}
+footer a{text-decoration:none;color:#E6EFF6}
 footer a:hover{color:var(--orange)}
-.disclaimer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);color:#8597A6;font-size:.85rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.disclaimer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);color:#98AEC2;font-size:.85rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 /* how / walkthrough */
 .how{background:var(--navy)}
 .demo{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;margin-top:40px}
-.phone{width:310px;height:580px;border-radius:44px;background:#05090D;padding:12px;box-shadow:0 30px 70px rgba(0,0,0,.5),inset 0 0 0 2px #2A3A48;position:relative}
-.phone::before{content:"";position:absolute;top:20px;left:50%;width:92px;height:24px;margin-left:-46px;border-radius:14px;background:#05090D;z-index:3}
+.phone{width:310px;height:580px;border-radius:44px;background:#03070C;padding:12px;box-shadow:0 30px 70px rgba(0,0,0,.5),inset 0 0 0 2px #1F3D63;position:relative}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:92px;height:24px;margin-left:-46px;border-radius:14px;background:#03070C;z-index:3}
 .screen{height:100%;border-radius:34px;overflow:hidden;background:var(--graphite);display:flex;flex-direction:column}
 .ph-head{display:flex;align-items:center;gap:10px;padding:46px 16px 10px;background:var(--green);flex:none}
 .ph-head .logo{width:34px;height:34px;border-radius:10px;flex:none}
 .ph-head b{display:block;font-size:.88rem;line-height:1.2}
-.ph-head small{font-size:.72rem;color:#BFE6D3}
-.ph-head small::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#3BD08F;margin-right:5px}
+.ph-head small{font-size:.72rem;color:#B5F2D7}
+.ph-head small::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#2EE59D;margin-right:5px}
 .ph-body{flex:1;min-height:0;overflow:hidden;padding:12px 12px 8px;display:flex;flex-direction:column;gap:8px;font-size:.76rem;line-height:1.42}
-.ph-in{flex:none;margin:0 12px 14px;padding:10px 14px;border-radius:999px;background:#1A2B3B;color:#7D8FA0;font-size:.78rem}
+.ph-in{flex:none;margin:0 12px 14px;padding:10px 14px;border-radius:999px;background:#12304F;color:#93A8BE;font-size:.78rem}
 .bub{max-width:90%;padding:9px 12px;border-radius:16px}
 .bub.user{align-self:flex-end;background:var(--orange);color:#1a0d00;border-bottom-right-radius:5px;font-weight:500}
-.bub.ai{background:#1F3346;border:1px solid var(--line);border-bottom-left-radius:5px}
+.bub.ai{background:#143A66;border:1px solid var(--line);border-bottom-left-radius:5px}
 .bub.ai ul{list-style:none;margin:5px 0}
 .bub.ai li{padding-left:13px;position:relative;margin:3px 0}
 .bub.ai li::before{content:"";position:absolute;left:2px;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--orange)}
 .docs{display:flex;flex-direction:column;gap:6px;align-self:flex-start;position:relative;overflow:hidden;border-radius:12px}
-.doc{display:flex;align-items:center;gap:7px;padding:7px 11px;border-radius:10px;background:#162636;border:1px solid var(--line);font-size:.74rem;color:#CFDAE3}
-.scan{position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(180deg,transparent,rgba(59,208,143,.35) 45%,rgba(59,208,143,.6) 50%,transparent 55%);transform:translateY(-100%);opacity:0;pointer-events:none}
-.cat{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(255,122,24,.15);border:1px solid rgba(255,122,24,.6);color:#FFC08F;font-weight:700;font-size:.74rem}
+.doc{display:flex;align-items:center;gap:7px;padding:7px 11px;border-radius:10px;background:#0E2E52;border:1px solid var(--line);font-size:.74rem;color:#DAE6F0}
+.scan{position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(180deg,transparent,rgba(46,229,157,.35) 45%,rgba(46,229,157,.6) 50%,transparent 55%);transform:translateY(-100%);opacity:0;pointer-events:none}
+.cat{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(255,106,0,.15);border:1px solid rgba(255,106,0,.6);color:#FFB06B;font-weight:700;font-size:.74rem}
 .slot{display:grid}
 .slot>*{grid-area:1/1}
-.typing{align-self:start;display:inline-flex;gap:5px;padding:12px 14px;border-radius:16px;border-bottom-left-radius:5px;background:#1F3346;width:max-content}
-.typing i{width:7px;height:7px;border-radius:50%;background:#9FB3C4}
+.typing{align-self:start;display:inline-flex;gap:5px;padding:12px 14px;border-radius:16px;border-bottom-left-radius:5px;background:#143A66;width:max-content}
+.typing i{width:7px;height:7px;border-radius:50%;background:#A9C2DA}
 /* states: hidden by default, shown cumulatively by .s1-.s4 on .demo */
 .demo .anim{opacity:0;transform:translateY(12px) scale(.97);transition:opacity .5s ease,transform .5s ease}
 .demo.s1 .a1,.demo.s2 .a2,.demo.s3 .a3,.demo.s4 .a4{opacity:1;transform:none}
@@ -124,7 +133,7 @@ footer a:hover{color:var(--orange)}
 .wstep h3{font-size:1.04rem;margin-bottom:2px}
 .wstep p{color:var(--muted);font-size:.93rem}
 .wstep .bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--orange);transform:scaleX(0);transform-origin:left}
-.wstep.active{background:rgba(255,122,24,.08);border-color:rgba(255,122,24,.55)}
+.wstep.active{background:rgba(255,106,0,.08);border-color:rgba(255,106,0,.55)}
 .wstep.active .num{background:var(--orange);color:#1a0d00}
 .wstep.active .bar{animation:prog var(--dur,3.6s) linear forwards}
 .demo.paused .wstep.active .bar{animation-play-state:paused}
@@ -139,7 +148,7 @@ footer a:hover{color:var(--orange)}
  .wstep .num{background:var(--orange);color:#1a0d00}
 }
 /* build banner */
-.build{background:linear-gradient(90deg,var(--orange),#FF9A4D);color:#1a0d00}
+.build{background:linear-gradient(90deg,var(--orange),#FF9A00);color:#1a0d00}
 .build .wrap{display:flex;align-items:center;justify-content:center;gap:10px 16px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;text-align:center;font-weight:700;font-size:.95rem}
 .build a{background:var(--graphite);color:#fff;text-decoration:none;padding:5px 12px;border-radius:999px;font-size:.82rem;white-space:nowrap}
 .build a:hover{background:var(--navy)}
@@ -148,14 +157,14 @@ footer a:hover{color:var(--orange)}
 .wl-box{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
 .wl-form{display:flex;gap:10px;flex-wrap:wrap}
 .wl-form input{flex:1 1 220px;min-width:0;font:inherit;font-size:1rem;padding:14px 16px;border-radius:14px;border:1.5px solid rgba(255,255,255,.18);background:var(--graphite);color:var(--text);outline:none}
-.wl-form input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,122,24,.25)}
-.wl-form input[aria-invalid="true"]{border-color:#FF6B6B}
+.wl-form input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,106,0,.25)}
+.wl-form input[aria-invalid="true"]{border-color:#FF4D5E}
 .wl-form button{flex:0 0 auto;font:inherit;font-weight:700;font-size:1rem;padding:14px 22px;border-radius:14px;border:0;background:var(--orange);color:#1a0d00;cursor:pointer}
 .wl-form button:disabled{opacity:.6;cursor:wait}
 .wl-msg{margin-top:12px;font-size:.95rem}
 .wl-msg:empty{display:none}
-.wl-msg.ok{color:#3BD08F}.wl-msg.err{color:#FF8A8A}.wl-msg.info{color:#FFD8B8}
-.wl-note{margin-top:6px;font-size:.82rem;color:#8597A6}
+.wl-msg.ok{color:#2EE59D}.wl-msg.err{color:#FF8088}.wl-msg.info{color:#FFD3A6}
+.wl-note{margin-top:6px;font-size:.82rem;color:#98AEC2}
 /* responsive */
 @media (max-width:900px){
  .hero .wrap{grid-template-columns:1fr;gap:36px;padding-top:44px;padding-bottom:56px}
@@ -192,7 +201,7 @@ footer a:hover{color:var(--orange)}
 .lang-sw{display:flex;gap:4px;margin-left:auto}
 .lang-sw button{display:inline-flex;align-items:center;gap:5px;background:transparent;border:1px solid var(--line);color:var(--muted);font:700 .76rem/1 inherit;font-family:inherit;padding:6px 8px;border-radius:8px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
 .lang-sw button:hover{color:#fff;border-color:rgba(255,255,255,.3)}
-.lang-sw button[aria-pressed="true"]{background:rgba(255,122,24,.16);border-color:var(--orange);color:#fff}
+.lang-sw button[aria-pressed="true"]{background:rgba(255,106,0,.16);border-color:var(--orange);color:#fff}
 .lang-sw button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 .flag{width:20px;height:14px;border-radius:2px;flex:none;display:block;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
 .langs .flag{width:18px;height:12px}
@@ -227,15 +236,15 @@ footer a:hover{color:var(--orange)}
    <h1 data-i18n="hero.h1">Your AI union rep in the&nbsp;UK. <em>Always on hand.</em></h1>
    <p class="lead" data-i18n="hero.lead">Ask Elon helps Polish and Romanian workers in the UK: it checks your payslip and SSP, prepares you for a disciplinary meeting and writes your letter to HR – in your language, any time of day.</p>
    <div class="btns">
-    <a class="btn btn-primary" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04" data-i18n="btn.buy">Get access – £9.99/month</a>
-    <!-- LINK DO SKLEPU: gdy aplikacja będzie w App Store / Google Play, zmień href poniższego linku (teraz prowadzi do Stripe) na link do sklepu, np.
-         <a class="btn btn-primary" href="TUTAJ_WKLEJ_LINK_DO_SKLEPU">Pobierz aplikację</a> -->
-    <a class="btn btn-soon" href="https://buy.stripe.com/5kQ6oIcjCf1m0SWfUYejK04" title="App coming soon to the app stores – click to get access now" data-i18n-attr="title:soon.title"><span data-i18n="soon.btn">Download the app</span><span class="sep"> – </span><span class="badge-soon" data-i18n="soon.badge">soon</span></a>
+    <!-- LINK DO SKLEPU: gdy aplikacja będzie w App Store / Google Play, zamień poniższy przycisk „Zapisz się…” (prowadzi do listy oczekujących #lista) na link do sklepu, np.
+         <a class="btn btn-primary" href="TUTAJ_WKLEJ_LINK_DO_SKLEPU">Pobierz aplikację</a> — i usuń akapit .cta-note pod przyciskami. -->
+    <a class="btn btn-early" href="#lista" id="cta-early" title="Join the waitlist – we’ll let you know as soon as the app is ready" data-i18n-attr="title:cta.title"><span data-i18n="cta.btn">Sign up to get the app first</span><span class="arr" aria-hidden="true">↓</span></a>
    </div>
+   <p class="cta-note"><span class="dot" aria-hidden="true"></span><span data-i18n="cta.note">The app is currently in integration and testing and will be available soon. Join the waitlist and you’ll be among the first to get it.</span></p>
    <div class="langs"><span data-i18n="hero.talk" style="background:none;border:0;padding:4px 0;color:inherit">Chat in:</span><span><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-pl"/></svg><b data-i18n="hero.l.pl" style="font-weight:inherit">Polish</b></span><span><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-ro"/></svg><b data-i18n="hero.l.ro" style="font-weight:inherit">Romanian</b></span><span><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-gb"/></svg><b data-i18n="hero.l.en" style="font-weight:inherit">English</b></span></div>
   </div>
   <div class="hero-card">
-   <span class="logo logo-lg" role="img" aria-label="Ask Elon – Union Mate UK"></span>
+   <img class="logo-lg logo-new" src="logo-proposal.svg" width="512" height="512" alt="Ask Elon – Union Mate UK">
    <div>
     <div class="price">£9.99 <small data-i18n="per.month">/ month</small></div>
     <p data-i18n="hero.card">Virtual union rep 24/7</p>
@@ -380,7 +389,7 @@ footer a:hover{color:var(--orange)}
   'hero.pill':'Disponibil 24/7 · Union Mate UK',
   'hero.h1':'Delegatul tău sindical AI în&nbsp;UK. <em>Mereu la îndemână.</em>',
   'hero.lead':'Ask Elon îi ajută pe polonezii și românii care lucrează în Marea Britanie: îți verifică fluturașul de salariu și SSP-ul, te pregătește pentru ședința disciplinară și îți scrie scrisoarea către HR – în limba ta, la orice oră.',
-  'btn.buy':'Abonează-te – £9.99/lună','soon.title':'Aplicația va apărea în curând în magazine – apasă ca să te abonezi chiar acum','soon.btn':'Descarcă aplicația','soon.badge':'în curând',
+  'btn.buy':'Abonează-te – £9.99/lună','cta.title':'Înscrie-te pe lista de așteptare – te anunțăm imediat ce aplicația e gata','cta.btn':'Înscrie-te și primește aplicația printre primii','cta.note':'Aplicația este acum în faza de integrare și testare și va fi disponibilă în curând. Înscrie-te pe listă și o vei primi printre primii.',
   'hero.talk':'Vorbește în:','hero.l.pl':'poloneză','hero.l.ro':'română','hero.l.en':'engleză',
   'per.month':'/ lună','hero.card':'Delegat sindical virtual 24/7',
   'how.eyebrow':'Cum funcționează','how.h2':'De la întrebare la un sfat concret',
@@ -414,7 +423,7 @@ footer a:hover{color:var(--orange)}
   'foot.links':'Linkuri','foot.contact':'Contact','foot.buy':'Abonează-te',
   'foot.disc':'Ask Elon nu este o firmă de avocatură, iar răspunsurile AI nu înlocuiesc consultanța juridică.'
  },
- pl:{ "nav.cta": "£9.99/mies.", "build.text": "🚧 Ask Elon jest w budowie — finał już blisko", "build.link": "Zapisz się na listę", "hero.pill": "Dostępny 24/7 · Union Mate UK", "hero.h1": "Twój delegat związkowy AI w&nbsp;UK. <em>Zawsze pod ręką.</em>", "hero.lead": "Ask Elon pomaga Polakom i Rumunom pracującym w Wielkiej Brytanii: sprawdzi payslip i SSP, przygotuje Cię do rozmowy dyscyplinarnej i napisze pismo do HR – w Twoim języku, o każdej porze.", "btn.buy": "Wykup dostęp – £9.99/mies.", "soon.btn": "Pobierz aplikację", "soon.badge": "wkrótce", "hero.talk": "Rozmawiaj po:", "hero.l.pl": "polsku", "hero.l.ro": "rumuńsku", "hero.l.en": "angielsku", "per.month": "/ miesiąc", "hero.card": "Wirtualny delegat związkowy 24/7", "how.eyebrow": "Jak to działa", "how.h2": "Od pytania do konkretnej porady", "how.sub": "Zobacz, jak Ask Elon prowadzi Cię przez sprawę – na przykładzie wezwania na rozmowę dyscyplinarną.", "ph.head": "Elon · Twój delegat", "ph.user": "Dostałem wezwanie na rozmowę dyscyplinarną. Co robić?", "ph.doc1": "📄 Wezwanie na spotkanie.pdf", "ph.doc2": "📄 Umowa o pracę.pdf", "ph.cat": "🏷️ Rozmowa dyscyplinarna", "ph.ai": "Spokojnie, masz konkretne prawa:\n        <ul>\n         <li>Możesz przyjść z kolegą z pracy lub przedstawicielem związku.</li>\n         <li>Poproś na piśmie o zarzuty i dowody przed spotkaniem.</li>\n         <li>Spisz swoją wersję wydarzeń z datami.</li>\n        </ul>Przygotować Twoje oświadczenie?", "ph.in": "Opisz swój problem…", "step1.h": "Użytkownik zadaje pytanie w czacie", "step1.p": "Opisujesz problem własnymi słowami – po polsku, rumuńsku lub angielsku, o dowolnej porze.", "step2.h": "AI analizuje sprawę i dokumenty", "step2.p": "Elon bierze pod uwagę Twój opis oraz dokumenty, takie jak umowa, payslip czy wezwanie.", "step3.h": "Sprawa trafia do odpowiedniej kategorii", "step3.p": "Np. rozmowa dyscyplinarna, SSP, agencja pracy albo pismo do HR.", "step4.h": "Użytkownik dostaje odpowiedź i poradę", "step4.p": "Jasne wyjaśnienie Twoich praw, kolejne kroki i – jeśli trzeba – gotowe pismo.", "how.note": "Dostęp: £9.99/mies. przez bezpieczną płatność Stripe. <a href=\"#cena\">Zobacz cenę</a>", "feat.eyebrow": "Co potrafi Ask Elon", "feat.h2": "Wsparcie w sprawach, które naprawdę się zdarzają w pracy", "feat.sub": "Problem z wypłatą, chorobowym albo agencją? Opisz go Elonowi – dostaniesz jasne wyjaśnienie i konkretne kolejne kroki.", "card1.h": "SSP i payslipy", "card1.p": "Pomoc z chorobowym (Statutory Sick Pay) i sprawdzanie payslipów – czy wszystko zostało policzone i wypłacone.", "card2.h": "Rozmowy dyscyplinarne", "card2.p": "Przygotowanie do spotkania dyscyplinarnego: czego się spodziewać i jak spokojnie przedstawić swoją wersję.", "card3.h": "Agencje pracy", "card3.p": "Zasady pracy przez agencję i pomoc w sporach z agencją – godziny, stawki, Twoje prawa.", "card4.h": "Pisma do HR i skargi", "card4.p": "Gotowe pisma do działu HR i formalne skargi (grievance) – dopasowane do Twojej sytuacji.", "card5.h": "Twoje dokumenty", "card5.p": "Przechowuj payslipy, umowy i korespondencję w jednym miejscu – zawsze pod ręką, gdy będą potrzebne.", "card6.h": "Czat AI w Twoim języku", "card6.p": "Rozmawiaj z Elonem po polsku, rumuńsku lub angielsku – 24 godziny na dobę, 7 dni w tygodniu.", "wl.eyebrow": "Lista oczekujących", "wl.h2": "Bądź pierwszy, gdy wystartujemy", "wl.sub": "Zostaw e-mail, a damy Ci znać, gdy aplikacja Ask Elon będzie gotowa do pobrania.", "wl.label": "Adres e-mail", "wl.btn": "Zapisz mnie", "wl.note": "Użyjemy Twojego adresu tylko po to, by poinformować Cię o starcie aplikacji.", "price.eyebrow": "Cena", "price.h2": "Jedna prosta subskrypcja", "price.sub": "Za mniej niż £10 miesięcznie masz wirtualnego delegata związkowego, który jest dostępny zawsze, gdy w pracy pojawia się problem.", "price.li1": "SSP, payslipy i zaległe wynagrodzenie", "price.li2": "Przygotowanie do rozmów dyscyplinarnych", "price.li3": "Zasady i spory z agencjami pracy", "price.li4": "Pisma do HR i formalne skargi", "price.li5": "Przechowywanie dokumentów", "price.li6": "Czat AI po polsku, rumuńsku i angielsku", "foot.desc": "Wirtualny delegat związkowy AI dla polskich i rumuńskich pracowników w Wielkiej Brytanii.", "foot.links": "Linki", "foot.contact": "Kontakt", "foot.buy": "Wykup dostęp", "foot.disc": "Ask Elon nie jest kancelarią prawną, a odpowiedzi AI nie zastępują porady prawnej.", "nav.logo": "Logo Ask Elon", "lang.group": "Wybierz język", "soon.title": "Aplikacja wkrótce w sklepach – kliknij, aby już teraz wykupić dostęp", "wl.ph": "twoj@email.com", "meta.title": "Ask Elon – Union Mate UK | Twój delegat związkowy AI w UK, 24/7", "meta.desc": "Ask Elon – delegat związkowy AI dla Polaków i Rumunów pracujących w UK. SSP, payslipy, rozmowy dyscyplinarne, agencje, pisma do HR. 24/7, po polsku, rumuńsku i angielsku. £9.99/mies." }};
+ pl:{ "nav.cta": "£9.99/mies.", "build.text": "🚧 Ask Elon jest w budowie — finał już blisko", "build.link": "Zapisz się na listę", "hero.pill": "Dostępny 24/7 · Union Mate UK", "hero.h1": "Twój delegat związkowy AI w&nbsp;UK. <em>Zawsze pod ręką.</em>", "hero.lead": "Ask Elon pomaga Polakom i Rumunom pracującym w Wielkiej Brytanii: sprawdzi payslip i SSP, przygotuje Cię do rozmowy dyscyplinarnej i napisze pismo do HR – w Twoim języku, o każdej porze.", "btn.buy": "Wykup dostęp – £9.99/mies.", "cta.btn": "Zapisz się i odbierz aplikację wśród pierwszych", "cta.note": "Aplikacja jest teraz na etapie integracji i testów – będzie dostępna już wkrótce. Zapisz się na listę, a dostaniesz ją wśród pierwszych.", "hero.talk": "Rozmawiaj po:", "hero.l.pl": "polsku", "hero.l.ro": "rumuńsku", "hero.l.en": "angielsku", "per.month": "/ miesiąc", "hero.card": "Wirtualny delegat związkowy 24/7", "how.eyebrow": "Jak to działa", "how.h2": "Od pytania do konkretnej porady", "how.sub": "Zobacz, jak Ask Elon prowadzi Cię przez sprawę – na przykładzie wezwania na rozmowę dyscyplinarną.", "ph.head": "Elon · Twój delegat", "ph.user": "Dostałem wezwanie na rozmowę dyscyplinarną. Co robić?", "ph.doc1": "📄 Wezwanie na spotkanie.pdf", "ph.doc2": "📄 Umowa o pracę.pdf", "ph.cat": "🏷️ Rozmowa dyscyplinarna", "ph.ai": "Spokojnie, masz konkretne prawa:\n        <ul>\n         <li>Możesz przyjść z kolegą z pracy lub przedstawicielem związku.</li>\n         <li>Poproś na piśmie o zarzuty i dowody przed spotkaniem.</li>\n         <li>Spisz swoją wersję wydarzeń z datami.</li>\n        </ul>Przygotować Twoje oświadczenie?", "ph.in": "Opisz swój problem…", "step1.h": "Użytkownik zadaje pytanie w czacie", "step1.p": "Opisujesz problem własnymi słowami – po polsku, rumuńsku lub angielsku, o dowolnej porze.", "step2.h": "AI analizuje sprawę i dokumenty", "step2.p": "Elon bierze pod uwagę Twój opis oraz dokumenty, takie jak umowa, payslip czy wezwanie.", "step3.h": "Sprawa trafia do odpowiedniej kategorii", "step3.p": "Np. rozmowa dyscyplinarna, SSP, agencja pracy albo pismo do HR.", "step4.h": "Użytkownik dostaje odpowiedź i poradę", "step4.p": "Jasne wyjaśnienie Twoich praw, kolejne kroki i – jeśli trzeba – gotowe pismo.", "how.note": "Dostęp: £9.99/mies. przez bezpieczną płatność Stripe. <a href=\"#cena\">Zobacz cenę</a>", "feat.eyebrow": "Co potrafi Ask Elon", "feat.h2": "Wsparcie w sprawach, które naprawdę się zdarzają w pracy", "feat.sub": "Problem z wypłatą, chorobowym albo agencją? Opisz go Elonowi – dostaniesz jasne wyjaśnienie i konkretne kolejne kroki.", "card1.h": "SSP i payslipy", "card1.p": "Pomoc z chorobowym (Statutory Sick Pay) i sprawdzanie payslipów – czy wszystko zostało policzone i wypłacone.", "card2.h": "Rozmowy dyscyplinarne", "card2.p": "Przygotowanie do spotkania dyscyplinarnego: czego się spodziewać i jak spokojnie przedstawić swoją wersję.", "card3.h": "Agencje pracy", "card3.p": "Zasady pracy przez agencję i pomoc w sporach z agencją – godziny, stawki, Twoje prawa.", "card4.h": "Pisma do HR i skargi", "card4.p": "Gotowe pisma do działu HR i formalne skargi (grievance) – dopasowane do Twojej sytuacji.", "card5.h": "Twoje dokumenty", "card5.p": "Przechowuj payslipy, umowy i korespondencję w jednym miejscu – zawsze pod ręką, gdy będą potrzebne.", "card6.h": "Czat AI w Twoim języku", "card6.p": "Rozmawiaj z Elonem po polsku, rumuńsku lub angielsku – 24 godziny na dobę, 7 dni w tygodniu.", "wl.eyebrow": "Lista oczekujących", "wl.h2": "Bądź pierwszy, gdy wystartujemy", "wl.sub": "Zostaw e-mail, a damy Ci znać, gdy aplikacja Ask Elon będzie gotowa do pobrania.", "wl.label": "Adres e-mail", "wl.btn": "Zapisz mnie", "wl.note": "Użyjemy Twojego adresu tylko po to, by poinformować Cię o starcie aplikacji.", "price.eyebrow": "Cena", "price.h2": "Jedna prosta subskrypcja", "price.sub": "Za mniej niż £10 miesięcznie masz wirtualnego delegata związkowego, który jest dostępny zawsze, gdy w pracy pojawia się problem.", "price.li1": "SSP, payslipy i zaległe wynagrodzenie", "price.li2": "Przygotowanie do rozmów dyscyplinarnych", "price.li3": "Zasady i spory z agencjami pracy", "price.li4": "Pisma do HR i formalne skargi", "price.li5": "Przechowywanie dokumentów", "price.li6": "Czat AI po polsku, rumuńsku i angielsku", "foot.desc": "Wirtualny delegat związkowy AI dla polskich i rumuńskich pracowników w Wielkiej Brytanii.", "foot.links": "Linki", "foot.contact": "Kontakt", "foot.buy": "Wykup dostęp", "foot.disc": "Ask Elon nie jest kancelarią prawną, a odpowiedzi AI nie zastępują porady prawnej.", "nav.logo": "Logo Ask Elon", "lang.group": "Wybierz język", "cta.title": "Zapisz się na listę oczekujących – damy znać, gdy tylko aplikacja będzie gotowa", "wl.ph": "twoj@email.com", "meta.title": "Ask Elon – Union Mate UK | Twój delegat związkowy AI w UK, 24/7", "meta.desc": "Ask Elon – delegat związkowy AI dla Polaków i Rumunów pracujących w UK. SSP, payslipy, rozmowy dyscyplinarne, agencje, pisma do HR. 24/7, po polsku, rumuńsku i angielsku. £9.99/mies." }};
  var MSG={
  pl:{'f.invalid':'Wpisz poprawny adres e-mail, np. jan@gmail.com.',
   'f.file':'Formularz działa dopiero na stronie uruchomionej na serwerze. Na razie napisz do nas: jocobisun@gmail.com.',
@@ -516,6 +525,12 @@ footer a:hover{color:var(--orange)}
    .catch(function(){say('f.conn','info');})
    .then(function(){b.disabled=false;});
  });
+})();
+</script>
+<script>
+(function(){
+ var c=document.getElementById('cta-early'),i=document.getElementById('wl-email');if(!c||!i)return;
+ c.addEventListener('click',function(){setTimeout(function(){try{i.focus({preventScroll:true});}catch(e){}},650);});
 })();
 </script>
 <script>
