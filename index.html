@@ -313,7 +313,7 @@ footer a:hover{color:var(--orange)}
     <p class="sub" data-i18n="wl.sub">Leave your email and we’ll let you know when the Ask Elon app is ready to download.</p>
    </div>
    <div>
-    <!-- Lokalnie (127.0.0.1/localhost) formularz wysyła POST na /api/waitlist. Na publicznym hostingu otwiera mailto: do jocobisun@gmail.com. -->
+    <!-- Lokalnie (127.0.0.1/localhost) formularz wysyła POST na /api/waitlist. Na publicznym hostingu zapisuje adres w formularzu Google Piotra (w tle); gdy to się nie uda, otwiera mailto: do jocobisun@gmail.com. -->
     <form class="wl-form" id="wl-form" action="/api/waitlist" method="post" novalidate>
      <label for="wl-email" class="sr-only" style="position:absolute;left:-9999px" data-i18n="wl.label">Email address</label>
      <input id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="your@email.com" data-i18n-attr="placeholder:wl.ph" required maxlength="254">
@@ -509,8 +509,13 @@ footer a:hover{color:var(--orange)}
   i.removeAttribute('aria-invalid');
   var h=location.hostname;
   if(location.protocol!=='file:'&&h!=='127.0.0.1'&&h!=='localhost'&&h!=='::1'&&h!=='[::1]'){
-   var mt=mailNote(v);
-   window.location.href=mt;return;
+   b.disabled=true;say('f.saving','info');
+   var fd=new URLSearchParams();fd.append('entry.416418799',v);
+   fetch('https://docs.google.com/forms/d/e/1FAIpQLScHzaVmMI-czBQ9XBx69TYKTjKbwooTG9cIn-A-7ajcoDzuNA/formResponse',{method:'POST',mode:'no-cors',body:fd})
+    .then(function(){say('f.ok','ok');f.reset();})
+    .catch(function(){window.location.href=mailNote(v);})
+    .then(function(){b.disabled=false;});
+   return;
   }
   if(location.protocol==='file:'){say('f.file','info');return;}
   b.disabled=true;say('f.saving','info');
