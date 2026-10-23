@@ -7,6 +7,14 @@
 <meta name="description" content="Ask Elon – an AI union rep for Polish and Romanian workers in the UK. SSP, payslips, disciplinary meetings, agencies, letters to HR. 24/7, in Polish, Romanian and English. £9.99/month.">
 <meta property="og:title" content="Ask Elon – Union Mate UK">
 <meta property="og:description" content="Your AI union rep in the UK, 24/7. £9.99/month.">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ro_RO">
+<link rel="canonical" href="https://askelon.uk/">
+<link rel="alternate" hreflang="en" href="https://askelon.uk/">
+<link rel="alternate" hreflang="pl" href="https://askelon.uk/?lang=pl">
+<link rel="alternate" hreflang="ro" href="https://askelon.uk/?lang=ro">
+<link rel="alternate" hreflang="x-default" href="https://askelon.uk/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -467,6 +475,7 @@ footer a:hover{color:var(--orange)}
   'mail.link':'click here','mail.note2':' or email us at contact@askelon.uk.'}};
  var LANGS=['en','pl','ro'],DEF='en',KEY='askelon-lang',cur=DEF;
  var desc=document.querySelector('meta[name="description"]');
+ var canon=document.querySelector('link[rel="canonical"]'),ogl=document.querySelector('meta[property="og:locale"]'),LOC={en:'en_GB',pl:'pl_PL',ro:'ro_RO'};
  var ORIG={'meta.title':document.title,'meta.desc':desc?desc.getAttribute('content'):''};
  var els=[].slice.call(document.querySelectorAll('[data-i18n]'));
  els.forEach(function(el){ORIG[el.getAttribute('data-i18n')]=el.innerHTML;});
@@ -477,6 +486,7 @@ footer a:hover{color:var(--orange)}
  function apply(l,save){
   if(LANGS.indexOf(l)<0)l=DEF;cur=l;
   document.documentElement.lang=l;
+  if(canon)canon.setAttribute('href','https://askelon.uk/'+(l===DEF?'':'?lang='+l));if(ogl)ogl.setAttribute('content',LOC[l]);
   els.forEach(function(el){var v=tr(el.getAttribute('data-i18n'));if(v!=null&&el.innerHTML!==v)el.innerHTML=v;});
   attrEls.forEach(function(el){el.getAttribute('data-i18n-attr').split(';').forEach(function(p){var kv=p.split(':');var v=tr(kv[1]);if(v!=null)el.setAttribute(kv[0],v);});});
   document.title=tr('meta.title');if(desc)desc.setAttribute('content',tr('meta.desc'));
