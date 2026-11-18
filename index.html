@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--green:#0B6E4F;--orange:#FF6A00;--navy:#0A2A5C;--graphite:#070F1A;--text:#F4F8FB;--muted:#BACADA;--card:#0F2C4D;--line:rgba(255,255,255,.13)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -60,7 +60,7 @@ h1 em{font-style:normal;color:var(--orange)}
 .btn-early:hover .arr{transform:translateY(2px)}
 .cta-note{display:flex;align-items:flex-start;gap:10px;margin-top:16px;max-width:560px;font-size:.92rem;line-height:1.5;color:#DCE8F2}
 .cta-note .dot{flex:none;margin-top:6px;background:var(--orange);box-shadow:0 0 0 4px rgba(255,106,0,.22)}
-#lista{scroll-margin-top:64px}
+#lista,#historia,#funkcje{scroll-margin-top:120px}
 .hero-card img.logo-new{display:block;height:auto;border-radius:20.3%;box-shadow:0 18px 40px rgba(0,0,0,.35)}
 .badge-soon{background:#FFD3A6;color:#6B2800;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:6px}
 .langs{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px;font-size:.88rem;color:var(--muted)}
@@ -217,11 +217,13 @@ footer a:hover{color:var(--orange)}
 @media (max-width:420px){.brand>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 @media (max-width:330px){.lang-sw .code{display:none}}
 /* blog link */
-.nav-blog{margin-left:auto;text-decoration:none;font-weight:700;font-size:.88rem;color:#E6EFF6;padding:6px 12px;border-radius:8px;border:1px solid var(--line);white-space:nowrap}
-.nav-blog:hover,.nav-blog:focus-visible{color:#fff;border-color:var(--orange);background:rgba(255,106,0,.12)}
+.nav-blog,.nav-story{text-decoration:none;font-weight:700;font-size:.88rem;color:#E6EFF6;padding:6px 12px;border-radius:8px;border:1px solid var(--line);white-space:nowrap}
+.nav-story{margin-left:auto}
+.nav-blog:hover,.nav-blog:focus-visible,.nav-story:hover,.nav-story:focus-visible{color:#fff;border-color:var(--orange);background:rgba(255,106,0,.12)}
 .nav-blog + .lang-sw{margin-left:0}
-@media (max-width:600px){.nav-blog{padding:5px 8px;font-size:.78rem}}
+@media (max-width:600px){.nav-blog,.nav-story{padding:5px 8px;font-size:.78rem}}
 </style>
+<link rel="stylesheet" href="css/historia.css">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -233,6 +235,7 @@ footer a:hover{color:var(--orange)}
 <nav>
  <div class="wrap">
   <a class="brand" href="#top"><img class="brand-logo" src="logo.webp" width="400" height="185" alt="Ask Elon logo" data-i18n-attr="alt:nav.logo"><span>Ask Elon<small>Union Mate UK</small></span></a>
+  <a class="nav-story" href="#historia" data-i18n="nav.story">Our story</a>
   <a class="nav-blog" href="/blog/en/" data-i18n="nav.blog" data-i18n-attr="href:nav.blog.href">Blog</a>
   <div class="lang-sw" role="group" aria-label="Choose language" data-i18n-attr="aria-label:lang.group"><button type="button" data-lang="pl" lang="pl" aria-label="Polski" aria-pressed="false"><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-pl"/></svg><span class="code">PL</span></button><button type="button" data-lang="ro" lang="ro" aria-label="Română" aria-pressed="false"><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-ro"/></svg><span class="code">RO</span></button><button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="true"><svg class="flag" aria-hidden="true" focusable="false"><use href="#f-gb"/></svg><span class="code">EN</span></button></div>
  </div>
@@ -316,6 +319,118 @@ footer a:hover{color:var(--orange)}
  </div>
 </section>
 
+<section id="historia" aria-labelledby="hist-title">
+ <div class="wrap">
+  <div class="hist-head">
+   <div class="hist-copy">
+    <div class="eyebrow" data-i18n="hist.eyebrow">Our story</div>
+    <h2 id="hist-title" data-i18n="hist.h2">From an idea to a live app</h2>
+    <p class="hist-lead" data-i18n="hist.lead">One year, from the first idea in autumn 2025 to the launch of Ask Elon — and a new look in November 2026.</p>
+   </div>
+   <div class="hist-mascot">
+    <img src="img/elon-head.webp" srcset="img/elon-head-192.webp 192w, img/elon-head.webp 768w" sizes="(max-width:720px) 128px, 220px" width="761" height="768" alt="Ask Elon mascot" data-i18n-attr="alt:hist.mascot.alt">
+   </div>
+  </div>
+
+  <div class="tl-scroll" tabindex="0" aria-label="Ask Elon project timeline" data-i18n-attr="aria-label:hist.track">
+   <div class="tl-board">
+    <div class="tl-line" aria-hidden="true"><span class="tl-progress"></span></div>
+    <ol class="tl-track">
+    <li class="tl-item" data-target="h-m1">
+     <div class="tl-date" data-i18n="hist.m1.date">Oct 2025</div>
+     <button type="button" class="tl-dot" aria-controls="h-m1" aria-expanded="false" data-i18n-attr="aria-label:hist.m1.label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M8.2 14.2C6.7 13 5.7 11.2 5.7 9.2a6.3 6.3 0 1 1 12.6 0c0 2-1 3.8-2.5 5H8.2z"/></svg></button>
+     <div class="tl-label" data-i18n="hist.m1.label">The idea</div>
+    </li>
+    <li class="tl-item" data-target="h-m2">
+     <div class="tl-date" data-i18n="hist.m2.date">May 2026</div>
+     <button type="button" class="tl-dot" aria-controls="h-m2" aria-expanded="false" data-i18n-attr="aria-label:hist.m2.label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.3"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.3"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.3"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.3"/></svg></button>
+     <div class="tl-label" data-i18n="hist.m2.label">First app version</div>
+    </li>
+    <li class="tl-item" data-target="h-m3">
+     <div class="tl-date" data-i18n="hist.m3.date">Jul 2026</div>
+     <button type="button" class="tl-dot" aria-controls="h-m3" aria-expanded="false" data-i18n-attr="aria-label:hist.m3.label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></button>
+     <div class="tl-label" data-i18n="hist.m3.label">Android version</div>
+    </li>
+    <li class="tl-item" data-target="h-m4">
+     <div class="tl-date" data-i18n="hist.m4.date">8 Oct 2026</div>
+     <button type="button" class="tl-dot" aria-controls="h-m4" aria-expanded="false" data-i18n-attr="aria-label:hist.m4.label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 10.2 5h3.6L19 19M7.4 13h9.2"/></svg></button>
+     <div class="tl-label" data-i18n="hist.m4.label">The name Ask Elon</div>
+    </li>
+    <li class="tl-item" data-target="h-m5">
+     <div class="tl-date" data-i18n="hist.m5.date">9 Oct 2026</div>
+     <button type="button" class="tl-dot" aria-controls="h-m5" aria-expanded="false" data-i18n-attr="aria-label:hist.m5.label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.2 3.4 3.2 14.6 0 18M12 3c-3.2 3.4-3.2 14.6 0 18"/></svg></button>
+     <div class="tl-label" data-i18n="hist.m5.label">Website &amp; graphics</div>
+    </li>
+    <li class="tl-item" data-target="h-m6">
+     <div class="tl-date" data-i18n="hist.m6.date">22 Oct 2026</div>
+     <button type="button" class="tl-dot" aria-controls="h-m6" aria-expanded="false" data-i18n-attr="aria-label:hist.m6.label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 10.7 20 3h-2.2l-5.3 6.1L8.3 3H4l7 10.1L4 21h2.2l5.8-6.7L15.6 21H20l-6.6-10.3z"/></svg></button>
+     <div class="tl-label" data-i18n="hist.m6.label">Profile on X</div>
+    </li>
+    <li class="tl-item" data-target="h-m7">
+     <div class="tl-date" data-i18n="hist.m7.date">23 Oct 2026</div>
+     <button type="button" class="tl-dot" aria-controls="h-m7" aria-expanded="false" data-i18n-attr="aria-label:hist.m7.label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h8.2L19 8.3V20.5H6z"/><path d="M14.2 3.5v4.8H19M9 12.5h6M9 16.2h6"/></svg></button>
+     <div class="tl-label" data-i18n="hist.m7.label">Blog in 3 languages</div>
+    </li>
+    <li class="tl-item is-launch" data-target="h-m8">
+     <div class="tl-date" data-i18n="hist.m8.date">23–24 Oct 2026</div>
+     <button type="button" class="tl-dot" aria-controls="h-m8" aria-expanded="false" data-i18n-attr="aria-label:hist.m8.label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.6 2.6 5.5 6.4 5.5 10.4-1.8 0-3.6.3-5.5 1.1-1.9-.8-3.7-1.1-5.5-1.1C6.5 9.4 8.4 5.6 12 3z"/><path d="M12 14.6V21M9.2 18.2 12 21l2.8-2.8"/><circle cx="13.1" cy="8.6" r="1.15"/></svg></button>
+     <div class="tl-label" data-i18n="hist.m8.label">App launch</div>
+    </li>
+    <li class="tl-item is-now" data-target="h-m9">
+     <div class="tl-date" data-i18n="hist.m9.date">Nov 2026</div>
+     <button type="button" class="tl-dot" aria-controls="h-m9" aria-expanded="false" data-i18n-attr="aria-label:hist.m9.label"><img src="img/elon-head-192.webp" width="190" height="192" alt=""></button>
+     <div class="tl-label" data-i18n="hist.m9.label">New look &amp; mascot</div>
+    </li>
+    </ol>
+   </div>
+  </div>
+
+  <div class="tl-more">
+   <p class="tl-more-intro" data-i18n="hist.more">A little more about each step — open any date to read on.</p>
+  <details id="h-m1">
+   <summary><span data-i18n="hist.m1.date">Oct 2025</span> — <span data-i18n="hist.m1.label">The idea</span></summary>
+   <p class="tl-body" data-i18n="hist.m1.body">The idea for an AI union mate for Polish and Romanian workers in the UK took shape in autumn 2025.</p>
+  </details>
+  <details id="h-m2">
+   <summary><span data-i18n="hist.m2.date">May 2026</span> — <span data-i18n="hist.m2.label">First app version</span></summary>
+   <p class="tl-body" data-i18n="hist.m2.body">The first working version of the app was ready at the end of May 2026.</p>
+  </details>
+  <details id="h-m3">
+   <summary><span data-i18n="hist.m3.date">Jul 2026</span> — <span data-i18n="hist.m3.label">Android version</span></summary>
+   <p class="tl-body" data-i18n="hist.m3.body">An Android version followed in July 2026, so people could use it on their phones.</p>
+  </details>
+  <details id="h-m4">
+   <summary><span data-i18n="hist.m4.date">8 Oct 2026</span> — <span data-i18n="hist.m4.label">The name Ask Elon</span></summary>
+   <p class="tl-body" data-i18n="hist.m4.body">On 8 October 2026 the project took the name Ask Elon.</p>
+  </details>
+  <details id="h-m5">
+   <summary><span data-i18n="hist.m5.date">9 Oct 2026</span> — <span data-i18n="hist.m5.label">Website &amp; graphics</span></summary>
+   <p class="tl-body" data-i18n="hist.m5.body">The next day the public website and the first brand graphics went live.</p>
+  </details>
+  <details id="h-m6">
+   <summary><span data-i18n="hist.m6.date">22 Oct 2026</span> — <span data-i18n="hist.m6.label">Profile on X</span></summary>
+   <p class="tl-body" data-i18n="hist.m6.body">Ask Elon appeared on X, so news could be shared in public.</p>
+  </details>
+  <details id="h-m7">
+   <summary><span data-i18n="hist.m7.date">23 Oct 2026</span> — <span data-i18n="hist.m7.label">Blog in 3 languages</span></summary>
+   <p class="tl-body" data-i18n="hist.m7.body">Practical guides to rights at work went live in English, Polish and Romanian.</p>
+  </details>
+  <details id="h-m8">
+   <summary><span data-i18n="hist.m8.date">23–24 Oct 2026</span> — <span data-i18n="hist.m8.label">App launch</span></summary>
+   <p class="tl-body" data-i18n="hist.m8.body">The Ask Elon app went live at app.askelon.uk on 23–24 October 2026.</p>
+  </details>
+  <details id="h-m9" class="is-now-d">
+   <summary><span data-i18n="hist.m9.date">Nov 2026</span> — <span data-i18n="hist.m9.label">New look &amp; mascot</span></summary>
+   <p class="tl-body" data-i18n="hist.m9.body">In November 2026 came a refreshed look, a new colour palette and the Ask Elon mascot.</p>
+  </details>
+  </div>
+
+  <div class="hist-cta">
+   <a class="hist-app" href="https://app.askelon.uk" data-i18n="hist.cta">Open the Ask Elon app</a>
+  </div>
+ </div>
+</section>
+
 <section class="waitlist" id="lista">
  <div class="wrap">
   <div class="wl-box">
@@ -370,6 +485,7 @@ footer a:hover{color:var(--orange)}
     <h4 data-i18n="foot.links">Links</h4>
     <ul>
      <li><a href="/blog/en/" data-i18n="foot.blog" data-i18n-attr="href:foot.blog.href">Blog</a></li>
+     <li><a href="#historia" data-i18n="foot.story">Our story</a></li>
      <li><a href="https://x.com/union_ask_elon" target="_blank" rel="noopener">X (Twitter) · @union_ask_elon</a></li>
      <li><a href="https://github.com/qubexus" target="_blank" rel="noopener">GitHub · qubexus</a></li>
      <!-- STRONA EMERGENT: gdy aplikacja będzie miała publiczny adres w Emergent, wklej tu:
@@ -396,6 +512,21 @@ footer a:hover{color:var(--orange)}
   'meta.title':'Ask Elon – Union Mate UK | Delegatul tău sindical AI în UK, 24/7',
   'meta.desc':'Ask Elon – delegat sindical AI pentru polonezii și românii care lucrează în UK. SSP, fluturași de salariu, ședințe disciplinare, agenții, scrisori către HR. 24/7, în poloneză, română și engleză. £9.99/lună.',
   'nav.blog':'Blog','nav.blog.href':'/blog/ro/','foot.blog':'Blog','foot.blog.href':'/blog/ro/',
+  'nav.story':'Povestea noastră','foot.story':'Povestea noastră',
+  'hist.eyebrow':'Povestea noastră','hist.h2':'De la o idee la o aplicație live',
+  'hist.lead':'Un an, de la prima idee din toamna lui 2025 până la lansarea Ask Elon — și un look nou în noiembrie 2026.',
+  'hist.mascot.alt':'Mascota Ask Elon','hist.track':'Cronologia proiectului Ask Elon',
+  'hist.more':'Câte puțin despre fiecare pas — deschide orice dată ca să citești mai departe.',
+  'hist.cta':'Deschide aplicația Ask Elon',
+  'hist.m1.date':'oct 2025','hist.m1.label':'Ideea','hist.m1.body':'Ideea unui coleg de sindicat AI pentru polonezii și românii care lucrează în UK a prins formă în toamna lui 2025.',
+  'hist.m2.date':'mai 2026','hist.m2.label':'Prima versiune','hist.m2.body':'Prima versiune funcțională a aplicației a fost gata la sfârșitul lui mai 2026.',
+  'hist.m3.date':'iul 2026','hist.m3.label':'Versiunea Android','hist.m3.body':'Versiunea pentru Android a urmat în iulie 2026, ca să poată fi folosită pe telefon.',
+  'hist.m4.date':'8 oct 2026','hist.m4.label':'Numele Ask Elon','hist.m4.body':'Pe 8 octombrie 2026 proiectul a primit numele Ask Elon.',
+  'hist.m5.date':'9 oct 2026','hist.m5.label':'Site-ul și grafica','hist.m5.body':'A doua zi au apărut site-ul public și primele grafice de brand.',
+  'hist.m6.date':'22 oct 2026','hist.m6.label':'Profilul pe X','hist.m6.body':'Ask Elon a apărut pe X, ca veștile să poată fi împărtășite public.',
+  'hist.m7.date':'23 oct 2026','hist.m7.label':'Blog în 3 limbi','hist.m7.body':'Ghiduri practice despre drepturile la muncă, în engleză, poloneză și română.',
+  'hist.m8.date':'23–24 oct 2026','hist.m8.label':'Lansarea aplicației','hist.m8.body':'Aplicația Ask Elon a fost lansată pe app.askelon.uk pe 23–24 octombrie 2026.',
+  'hist.m9.date':'nov 2026','hist.m9.label':'Look nou și mascotă','hist.m9.body':'În noiembrie 2026 au venit un look reînnoit, o paletă nouă de culori și mascota Ask Elon.',
   'nav.logo':'Sigla Ask Elon','lang.group':'Alege limba','nav.cta':'£9.99/lună',
   'build.text':'🚧 Ask Elon este în construcție — lansarea e aproape','build.link':'Înscrie-te pe listă',
   'hero.pill':'Disponibil 24/7 · Union Mate UK',
@@ -435,7 +566,7 @@ footer a:hover{color:var(--orange)}
   'foot.links':'Linkuri','foot.contact':'Contact','foot.buy':'Abonează-te',
   'foot.disc':'Ask Elon nu este o firmă de avocatură, iar răspunsurile AI nu înlocuiesc consultanța juridică.'
  },
- pl:{ "nav.blog": "Blog", "nav.blog.href": "/blog/pl/", "foot.blog": "Blog", "foot.blog.href": "/blog/pl/", "nav.cta": "£9.99/mies.", "build.text": "🚧 Ask Elon jest w budowie — finał już blisko", "build.link": "Zapisz się na listę", "hero.pill": "Dostępny 24/7 · Union Mate UK", "hero.h1": "Twój delegat związkowy AI w&nbsp;UK. <em>Zawsze pod ręką.</em>", "hero.lead": "Ask Elon pomaga Polakom i Rumunom pracującym w Wielkiej Brytanii: sprawdzi payslip i SSP, przygotuje Cię do rozmowy dyscyplinarnej i napisze pismo do HR – w Twoim języku, o każdej porze.", "btn.buy": "Wykup dostęp – £9.99/mies.", "cta.btn": "Zapisz się i odbierz aplikację wśród pierwszych", "cta.note": "Aplikacja jest teraz na etapie integracji i testów – będzie dostępna już wkrótce. Zapisz się na listę, a dostaniesz ją wśród pierwszych.", "hero.talk": "Rozmawiaj po:", "hero.l.pl": "polsku", "hero.l.ro": "rumuńsku", "hero.l.en": "angielsku", "per.month": "/ miesiąc", "hero.card": "Wirtualny delegat związkowy 24/7", "how.eyebrow": "Jak to działa", "how.h2": "Od pytania do konkretnej porady", "how.sub": "Zobacz, jak Ask Elon prowadzi Cię przez sprawę – na przykładzie wezwania na rozmowę dyscyplinarną.", "ph.head": "Elon · Twój delegat", "ph.user": "Dostałem wezwanie na rozmowę dyscyplinarną. Co robić?", "ph.doc1": "📄 Wezwanie na spotkanie.pdf", "ph.doc2": "📄 Umowa o pracę.pdf", "ph.cat": "🏷️ Rozmowa dyscyplinarna", "ph.ai": "Spokojnie, masz konkretne prawa:\n        <ul>\n         <li>Możesz przyjść z kolegą z pracy lub przedstawicielem związku.</li>\n         <li>Poproś na piśmie o zarzuty i dowody przed spotkaniem.</li>\n         <li>Spisz swoją wersję wydarzeń z datami.</li>\n        </ul>Przygotować Twoje oświadczenie?", "ph.in": "Opisz swój problem…", "step1.h": "Użytkownik zadaje pytanie w czacie", "step1.p": "Opisujesz problem własnymi słowami – po polsku, rumuńsku lub angielsku, o dowolnej porze.", "step2.h": "AI analizuje sprawę i dokumenty", "step2.p": "Elon bierze pod uwagę Twój opis oraz dokumenty, takie jak umowa, payslip czy wezwanie.", "step3.h": "Sprawa trafia do odpowiedniej kategorii", "step3.p": "Np. rozmowa dyscyplinarna, SSP, agencja pracy albo pismo do HR.", "step4.h": "Użytkownik dostaje odpowiedź i poradę", "step4.p": "Jasne wyjaśnienie Twoich praw, kolejne kroki i – jeśli trzeba – gotowe pismo.", "how.note": "Dostęp: £9.99/mies. przez bezpieczną płatność Stripe. <a href=\"#cena\">Zobacz cenę</a>", "feat.eyebrow": "Co potrafi Ask Elon", "feat.h2": "Wsparcie w sprawach, które naprawdę się zdarzają w pracy", "feat.sub": "Problem z wypłatą, chorobowym albo agencją? Opisz go Elonowi – dostaniesz jasne wyjaśnienie i konkretne kolejne kroki.", "card1.h": "SSP i payslipy", "card1.p": "Pomoc z chorobowym (Statutory Sick Pay) i sprawdzanie payslipów – czy wszystko zostało policzone i wypłacone.", "card2.h": "Rozmowy dyscyplinarne", "card2.p": "Przygotowanie do spotkania dyscyplinarnego: czego się spodziewać i jak spokojnie przedstawić swoją wersję.", "card3.h": "Agencje pracy", "card3.p": "Zasady pracy przez agencję i pomoc w sporach z agencją – godziny, stawki, Twoje prawa.", "card4.h": "Pisma do HR i skargi", "card4.p": "Gotowe pisma do działu HR i formalne skargi (grievance) – dopasowane do Twojej sytuacji.", "card5.h": "Twoje dokumenty", "card5.p": "Przechowuj payslipy, umowy i korespondencję w jednym miejscu – zawsze pod ręką, gdy będą potrzebne.", "card6.h": "Czat AI w Twoim języku", "card6.p": "Rozmawiaj z Elonem po polsku, rumuńsku lub angielsku – 24 godziny na dobę, 7 dni w tygodniu.", "wl.eyebrow": "Lista oczekujących", "wl.h2": "Bądź pierwszy, gdy wystartujemy", "wl.sub": "Zostaw e-mail, a damy Ci znać, gdy aplikacja Ask Elon będzie gotowa do pobrania.", "wl.label": "Adres e-mail", "wl.btn": "Zapisz mnie", "wl.note": "Użyjemy Twojego adresu tylko po to, by poinformować Cię o starcie aplikacji.", "price.eyebrow": "Cena", "price.h2": "Jedna prosta subskrypcja", "price.sub": "Za mniej niż £10 miesięcznie masz wirtualnego delegata związkowego, który jest dostępny zawsze, gdy w pracy pojawia się problem.", "price.li1": "SSP, payslipy i zaległe wynagrodzenie", "price.li2": "Przygotowanie do rozmów dyscyplinarnych", "price.li3": "Zasady i spory z agencjami pracy", "price.li4": "Pisma do HR i formalne skargi", "price.li5": "Przechowywanie dokumentów", "price.li6": "Czat AI po polsku, rumuńsku i angielsku", "foot.desc": "Wirtualny delegat związkowy AI dla polskich i rumuńskich pracowników w Wielkiej Brytanii.", "foot.links": "Linki", "foot.contact": "Kontakt", "foot.buy": "Wykup dostęp", "foot.disc": "Ask Elon nie jest kancelarią prawną, a odpowiedzi AI nie zastępują porady prawnej.", "nav.logo": "Logo Ask Elon", "lang.group": "Wybierz język", "cta.title": "Zapisz się na listę oczekujących – damy znać, gdy tylko aplikacja będzie gotowa", "wl.ph": "twoj@email.com", "meta.title": "Ask Elon – Union Mate UK | Twój delegat związkowy AI w UK, 24/7", "meta.desc": "Ask Elon – delegat związkowy AI dla Polaków i Rumunów pracujących w UK. SSP, payslipy, rozmowy dyscyplinarne, agencje, pisma do HR. 24/7, po polsku, rumuńsku i angielsku. £9.99/mies." }};
+ pl:{ "nav.blog": "Blog", "nav.blog.href": "/blog/pl/", "foot.blog": "Blog", "foot.blog.href": "/blog/pl/", "nav.cta": "£9.99/mies.", "build.text": "🚧 Ask Elon jest w budowie — finał już blisko", "build.link": "Zapisz się na listę", "hero.pill": "Dostępny 24/7 · Union Mate UK", "hero.h1": "Twój delegat związkowy AI w&nbsp;UK. <em>Zawsze pod ręką.</em>", "hero.lead": "Ask Elon pomaga Polakom i Rumunom pracującym w Wielkiej Brytanii: sprawdzi payslip i SSP, przygotuje Cię do rozmowy dyscyplinarnej i napisze pismo do HR – w Twoim języku, o każdej porze.", "btn.buy": "Wykup dostęp – £9.99/mies.", "cta.btn": "Zapisz się i odbierz aplikację wśród pierwszych", "cta.note": "Aplikacja jest teraz na etapie integracji i testów – będzie dostępna już wkrótce. Zapisz się na listę, a dostaniesz ją wśród pierwszych.", "hero.talk": "Rozmawiaj po:", "hero.l.pl": "polsku", "hero.l.ro": "rumuńsku", "hero.l.en": "angielsku", "per.month": "/ miesiąc", "hero.card": "Wirtualny delegat związkowy 24/7", "how.eyebrow": "Jak to działa", "how.h2": "Od pytania do konkretnej porady", "how.sub": "Zobacz, jak Ask Elon prowadzi Cię przez sprawę – na przykładzie wezwania na rozmowę dyscyplinarną.", "ph.head": "Elon · Twój delegat", "ph.user": "Dostałem wezwanie na rozmowę dyscyplinarną. Co robić?", "ph.doc1": "📄 Wezwanie na spotkanie.pdf", "ph.doc2": "📄 Umowa o pracę.pdf", "ph.cat": "🏷️ Rozmowa dyscyplinarna", "ph.ai": "Spokojnie, masz konkretne prawa:\n        <ul>\n         <li>Możesz przyjść z kolegą z pracy lub przedstawicielem związku.</li>\n         <li>Poproś na piśmie o zarzuty i dowody przed spotkaniem.</li>\n         <li>Spisz swoją wersję wydarzeń z datami.</li>\n        </ul>Przygotować Twoje oświadczenie?", "ph.in": "Opisz swój problem…", "step1.h": "Użytkownik zadaje pytanie w czacie", "step1.p": "Opisujesz problem własnymi słowami – po polsku, rumuńsku lub angielsku, o dowolnej porze.", "step2.h": "AI analizuje sprawę i dokumenty", "step2.p": "Elon bierze pod uwagę Twój opis oraz dokumenty, takie jak umowa, payslip czy wezwanie.", "step3.h": "Sprawa trafia do odpowiedniej kategorii", "step3.p": "Np. rozmowa dyscyplinarna, SSP, agencja pracy albo pismo do HR.", "step4.h": "Użytkownik dostaje odpowiedź i poradę", "step4.p": "Jasne wyjaśnienie Twoich praw, kolejne kroki i – jeśli trzeba – gotowe pismo.", "how.note": "Dostęp: £9.99/mies. przez bezpieczną płatność Stripe. <a href=\"#cena\">Zobacz cenę</a>", "feat.eyebrow": "Co potrafi Ask Elon", "feat.h2": "Wsparcie w sprawach, które naprawdę się zdarzają w pracy", "feat.sub": "Problem z wypłatą, chorobowym albo agencją? Opisz go Elonowi – dostaniesz jasne wyjaśnienie i konkretne kolejne kroki.", "card1.h": "SSP i payslipy", "card1.p": "Pomoc z chorobowym (Statutory Sick Pay) i sprawdzanie payslipów – czy wszystko zostało policzone i wypłacone.", "card2.h": "Rozmowy dyscyplinarne", "card2.p": "Przygotowanie do spotkania dyscyplinarnego: czego się spodziewać i jak spokojnie przedstawić swoją wersję.", "card3.h": "Agencje pracy", "card3.p": "Zasady pracy przez agencję i pomoc w sporach z agencją – godziny, stawki, Twoje prawa.", "card4.h": "Pisma do HR i skargi", "card4.p": "Gotowe pisma do działu HR i formalne skargi (grievance) – dopasowane do Twojej sytuacji.", "card5.h": "Twoje dokumenty", "card5.p": "Przechowuj payslipy, umowy i korespondencję w jednym miejscu – zawsze pod ręką, gdy będą potrzebne.", "card6.h": "Czat AI w Twoim języku", "card6.p": "Rozmawiaj z Elonem po polsku, rumuńsku lub angielsku – 24 godziny na dobę, 7 dni w tygodniu.", "wl.eyebrow": "Lista oczekujących", "wl.h2": "Bądź pierwszy, gdy wystartujemy", "wl.sub": "Zostaw e-mail, a damy Ci znać, gdy aplikacja Ask Elon będzie gotowa do pobrania.", "wl.label": "Adres e-mail", "wl.btn": "Zapisz mnie", "wl.note": "Użyjemy Twojego adresu tylko po to, by poinformować Cię o starcie aplikacji.", "price.eyebrow": "Cena", "price.h2": "Jedna prosta subskrypcja", "price.sub": "Za mniej niż £10 miesięcznie masz wirtualnego delegata związkowego, który jest dostępny zawsze, gdy w pracy pojawia się problem.", "price.li1": "SSP, payslipy i zaległe wynagrodzenie", "price.li2": "Przygotowanie do rozmów dyscyplinarnych", "price.li3": "Zasady i spory z agencjami pracy", "price.li4": "Pisma do HR i formalne skargi", "price.li5": "Przechowywanie dokumentów", "price.li6": "Czat AI po polsku, rumuńsku i angielsku", "foot.desc": "Wirtualny delegat związkowy AI dla polskich i rumuńskich pracowników w Wielkiej Brytanii.", "foot.links": "Linki", "foot.contact": "Kontakt", "foot.buy": "Wykup dostęp", "foot.disc": "Ask Elon nie jest kancelarią prawną, a odpowiedzi AI nie zastępują porady prawnej.", "nav.logo": "Logo Ask Elon", "lang.group": "Wybierz język", "cta.title": "Zapisz się na listę oczekujących – damy znać, gdy tylko aplikacja będzie gotowa", "wl.ph": "twoj@email.com", "meta.title": "Ask Elon – Union Mate UK | Twój delegat związkowy AI w UK, 24/7", "meta.desc": "Ask Elon – delegat związkowy AI dla Polaków i Rumunów pracujących w UK. SSP, payslipy, rozmowy dyscyplinarne, agencje, pisma do HR. 24/7, po polsku, rumuńsku i angielsku. £9.99/mies.", "nav.story": "Oś czasu", "foot.story": "Oś czasu", "hist.eyebrow": "Oś czasu", "hist.h2": "Od pomysłu do działającej aplikacji", "hist.lead": "Jeden rok: od pierwszego pomysłu jesienią 2025 do startu Ask Elon — i nowego wyglądu w listopadzie 2026.", "hist.mascot.alt": "Maskotka Ask Elon", "hist.track": "Oś czasu projektu Ask Elon", "hist.more": "Krótko o każdym kroku — rozwiń datę, żeby przeczytać więcej.", "hist.cta": "Otwórz aplikację Ask Elon", "hist.m1.date": "paź 2025", "hist.m1.label": "Pomysł", "hist.m1.body": "Jesienią 2025 roku zrodził się pomysł na wirtualnego delegata AI dla Polaków i Rumunów pracujących w UK.", "hist.m2.date": "maj 2026", "hist.m2.label": "Pierwsza wersja", "hist.m2.body": "Pierwsza działająca wersja aplikacji była gotowa pod koniec maja 2026.", "hist.m3.date": "lip 2026", "hist.m3.label": "Wersja na Androida", "hist.m3.body": "W lipcu 2026 pojawiła się wersja na Androida, żeby można było korzystać z niej w telefonie.", "hist.m4.date": "8 paź 2026", "hist.m4.label": "Nazwa Ask Elon", "hist.m4.body": "8 października 2026 projekt przyjął nazwę Ask Elon.", "hist.m5.date": "9 paź 2026", "hist.m5.label": "Strona i grafiki", "hist.m5.body": "Następnego dnia wystartowały publiczna strona i pierwsze grafiki marki.", "hist.m6.date": "22 paź 2026", "hist.m6.label": "Profil na X", "hist.m6.body": "Ask Elon pojawił się na X, żeby można było dzielić się wiadomościami publicznie.", "hist.m7.date": "23 paź 2026", "hist.m7.label": "Blog w 3 językach", "hist.m7.body": "Praktyczne poradniki o prawach w pracy — po angielsku, polsku i rumuńsku.", "hist.m8.date": "23–24 paź 2026", "hist.m8.label": "Start aplikacji", "hist.m8.body": "Aplikacja Ask Elon wystartowała na app.askelon.uk 23–24 października 2026.", "hist.m9.date": "lis 2026", "hist.m9.label": "Nowy wygląd i maskotka", "hist.m9.body": "W listopadzie 2026 przyszedł odświeżony wygląd, nowa paleta kolorów i maskotka Ask Elon." }};
  var MSG={
  pl:{'f.invalid':'Wpisz poprawny adres e-mail, np. jan@gmail.com.',
   'f.file':'Formularz działa dopiero na stronie uruchomionej na serwerze. Na razie napisz do nas: contact@askelon.uk.',
@@ -575,5 +706,6 @@ footer a:hover{color:var(--orange)}
  if(reduce&&reduce.addEventListener)reduce.addEventListener('change',function(){if(reduce.matches)staticMode();else{show(1);if(visible)start();}});
 })();
 </script>
+<script src="js/historia.js" defer></script>
 </body>
 </html>
